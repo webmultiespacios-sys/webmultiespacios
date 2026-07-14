@@ -128,7 +128,8 @@ export const stands: Stand[] = [
     dimensions: "Personalizable",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Octanorm/estructura-octanorm.webp",
-      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Octanorm/estructura-octanorm-2.webp"
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Octanorm/estructura-octanorm-2.webp",
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Octanorm/octanorm-3.webp"
     ],
     description: "El sistema por excelencia para ferias comerciales y exposiciones, permitiendo montajes rápidos, modulares y uniformes.",
   },
@@ -148,7 +149,11 @@ export const stands: Stand[] = [
     title: "Muro de escalar",
     category: "Estructuras",
     dimensions: "Personalizable",
-    image: placeholderImg,
+    image: [
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Muro de Escalar/Muro-de-escalar.webp",
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Muro de Escalar/Muro-de-escalar-2.webp",
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Muro de Escalar/Muro-de-escalar-3.webp"
+    ],
     description: "Atracción deportiva segura y atractiva, montada con los más altos estándares de calidad para activaciones y ferias.",
   },
   {
@@ -169,7 +174,10 @@ export const stands: Stand[] = [
     title: "Pipe Drape (Cortina)",
     category: "Estructuras",
     dimensions: "Personalizable",
-    image: placeholderImg,
+    image: [
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Pipe Drape (Cortina)/pipe-drape.webp",
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Pipe Drape (Cortina)/pipe-drape-estructura.webp"
+    ],
     description: "Sistema de postes y cortinaje elegante para dividir espacios, crear fondos escenográficos o pasillos en eventos corporativos.",
   },
 ];

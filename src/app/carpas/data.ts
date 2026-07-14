@@ -26,7 +26,10 @@ export const stands: Stand[] = [
     title: "Carpa Pagoda",
     category: "Pagodas",
     dimensions: "Personalizable",
-    image: "/imagenes/1_carpas/carpa-pagoda.webp",
+    image: [
+      "/imagenes/1_carpas/carpa-pagoda.webp",
+      "/imagenes/1_carpas/pagoda-colores.webp"
+    ],
     description: "Carpa de diseño elegante y techo puntiagudo, perfecta para eventos al aire libre, recepciones y activaciones de marca pequeñas.",
   },
   {
