@@ -104,7 +104,15 @@ export const stands: Stand[] = [
     title: "Estructura Truss",
     category: "Estructuras",
     dimensions: "Personalizable",
-    image: placeholderImg,
+    image: [
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Truss/Truss-eventos.webp",
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Truss/Truss-eventos-2.webp",
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Truss/Truss-eventos-3.webp",
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Truss/Truss-eventos-4.webp",
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Truss/Truss-estructura.webp",
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Truss/Truss-techo.webp",
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Truss/Truss-techo-2.webp"
+    ],
     description: "Sistemas de aluminio modulares esenciales para el soporte seguro de iluminación, sonido y pantallas gigantes.",
   },
   {
@@ -129,7 +137,8 @@ export const stands: Stand[] = [
     category: "Estructuras",
     dimensions: "Personalizable",
     image: [
-      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Graderias/estructuras-graderias.webp",
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Graderias/graderia-escalonada.webp",
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Graderias/estructuras-graderias-1.webp",
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Graderias/estructuras-graderias-2.webp",
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Graderias/estructuras-graderias-3.webp"
     ],
