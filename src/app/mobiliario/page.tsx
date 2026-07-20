@@ -46,12 +46,12 @@ function StandImageCarousel({ images, alt, onImageClick }: { images: string[]; a
   const productName = getProductNameFromUrl(images[currentIndex]);
 
   return (
-    <div className="relative w-full h-full group/carousel cursor-pointer" onClick={() => onImageClick(images, currentIndex)}>
+    <div className="relative w-full h-full group/carousel cursor-pointer bg-white" onClick={() => onImageClick(images, currentIndex)}>
       <Image
         src={images[currentIndex]}
         alt={`${alt} - Imagen ${currentIndex + 1}`}
         fill
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
+        className="object-contain p-4 transition-transform duration-700 group-hover:scale-105"
       />
       {/* Product Name Badge */}
       {productName && (
@@ -223,8 +223,8 @@ export default function MobiliarioPage() {
               Mobiliario <span className="text-brand-accent-light">y Accesorios</span>
             </h1>
             <p className="text-lg text-white/70 leading-relaxed">
-              Alquiler de mobiliario premium y accesorios para eventos corporativos, ferias comerciales,
-              congresos, activaciones de marca y eventos sociales. Diseños modernos y en excelente estado.
+              Proveemos mobiliario para todo tipo de evento, Salas Lounge, Puff, alquiler de sillas, mesas y exhibición.
+              Ofrecemos productos de buena calidad y así satisfacer las necesidades de nuestros clientes
             </p>
           </motion.div>
         </div>
@@ -233,7 +233,7 @@ export default function MobiliarioPage() {
       {/* ============ FILTERS ============ */}
       <section className="sticky top-20 z-30 bg-white/95 backdrop-blur-lg border-b border-brand-light shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-start md:justify-center gap-3 py-5 overflow-x-auto no-scrollbar">
+          <div className="flex flex-wrap items-center justify-center gap-3 py-5">
             {categories.map((cat) => (
               <button
                 key={cat.label}
@@ -276,7 +276,7 @@ export default function MobiliarioPage() {
                 >
                   <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-brand-light">
                     {/* Image */}
-                    <div className="relative h-64 lg:h-80 xl:h-96 overflow-hidden bg-gray-100">
+                    <div className="relative h-72 overflow-hidden bg-white">
                       {Array.isArray(stand.image) ? (
                         <StandImageCarousel
                           images={stand.image}
@@ -284,16 +284,16 @@ export default function MobiliarioPage() {
                           onImageClick={(images, idx) => setSelectedItem({ images, index: idx })}
                         />
                       ) : (
-                        <div className="relative w-full h-full cursor-pointer" onClick={handleOpenLightbox}>
+                        <div className="relative w-full h-full cursor-pointer bg-white" onClick={handleOpenLightbox}>
                           <Image
                             src={stand.image}
                             alt={stand.title}
                             fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                            className="object-contain p-4 transition-transform duration-700 group-hover:scale-105"
                           />
                         </div>
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                       {/* Hover overlay button */}
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         <span className="bg-white text-brand-blue px-6 py-3 rounded-full text-sm font-bold shadow-lg">
@@ -309,32 +309,32 @@ export default function MobiliarioPage() {
                     </div>
 
                     {/* Content */}
-                    <div className="p-6 md:p-8">
-                      <h3 className="text-xl lg:text-2xl font-bold text-brand-dark mb-2 group-hover:text-brand-blue transition-colors">
+                    <div className="p-5 md:p-6">
+                      <h3 className="text-lg font-bold text-brand-dark mb-1 group-hover:text-brand-blue transition-colors line-clamp-1">
                         {stand.title}
                       </h3>
-                      <p className="text-sm lg:text-base text-brand-accent font-semibold mb-4">
+                      <p className="text-xs font-semibold text-brand-accent mb-2">
                         {stand.dimensions}
                       </p>
-                      <p className="text-base text-brand-dark/60 leading-relaxed mb-6">
+                      <p className="text-sm text-brand-dark/60 leading-relaxed mb-4 line-clamp-2 min-h-[40px]">
                         {stand.description}
                       </p>
-                      <div className="flex items-center justify-between pt-4 border-t border-brand-light/50">
+                      <div className="flex items-center justify-between pt-3 border-t border-brand-light/50">
                         <a
                           href={`https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20interesa%20cotizar%20${encodeURIComponent(stand.title)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-base font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
                         >
-                          <FaWhatsapp className="w-5 h-5" />
+                          <FaWhatsapp className="w-4 h-4" />
                           Cotizar
                         </a>
                         <button
                           onClick={handleOpenLightbox}
-                          className="text-brand-accent text-base font-semibold flex items-center gap-1.5 group-hover:gap-2.5 transition-all cursor-pointer"
+                          className="text-brand-accent text-sm font-semibold flex items-center gap-1 group-hover:gap-1.5 transition-all cursor-pointer"
                         >
                           Detalles
-                          <FiArrowRight className="w-4 h-4" />
+                          <FiArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </div>
                     </div>

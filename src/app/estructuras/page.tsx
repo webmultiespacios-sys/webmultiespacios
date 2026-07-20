@@ -235,7 +235,7 @@ export default function EstructurasPage() {
       {/* ============ FILTERS ============ */}
       <section className="sticky top-20 z-30 bg-white/95 backdrop-blur-lg border-b border-brand-light shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-start md:justify-center gap-3 py-5 overflow-x-auto no-scrollbar">
+          <div className="flex flex-wrap items-center justify-center gap-3 py-5">
             {categories.map((cat) => (
               <button
                 key={cat.label}
