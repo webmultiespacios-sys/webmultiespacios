@@ -79,9 +79,8 @@ function StandImageCarousel({ images, alt, onImageClick }: { images: string[]; a
             {images.map((_, idx) => (
               <div
                 key={idx}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  currentIndex === idx ? "bg-white scale-125" : "bg-white/50"
-                }`}
+                className={`w-2 h-2 rounded-full transition-all ${currentIndex === idx ? "bg-white scale-125" : "bg-white/50"
+                  }`}
               />
             ))}
           </div>
@@ -133,13 +132,13 @@ export default function EstructurasPage() {
             onClick={() => setSelectedItem(null)}
           >
             {/* Close Button */}
-            <button 
+            <button
               className="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 rounded-full p-3 transition-all z-[60]"
               onClick={() => setSelectedItem(null)}
             >
               <FiX className="w-6 h-6 md:w-8 md:h-8" />
             </button>
-            
+
             {/* Main Image Container */}
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
@@ -156,7 +155,7 @@ export default function EstructurasPage() {
                   className="object-contain"
                   quality={100}
                 />
-                
+
                 {/* Lightbox Product Name Badge */}
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
                   <span className="bg-brand-blue text-white text-sm md:text-base font-extrabold px-6 py-3.5 rounded-xl shadow-2xl border border-white/20 tracking-wider whitespace-nowrap">
@@ -180,7 +179,7 @@ export default function EstructurasPage() {
                   >
                     <FiChevronRight className="w-8 h-8 md:w-10 md:h-10" />
                   </button>
-                  
+
                   {/* Dots Indicator */}
                   <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-2.5 z-[60]">
                     {selectedItem.images.map((_, idx) => (
@@ -190,9 +189,8 @@ export default function EstructurasPage() {
                           e.stopPropagation();
                           setSelectedItem({ ...selectedItem, index: idx });
                         }}
-                        className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all ${
-                          selectedItem.index === idx ? "bg-white scale-125" : "bg-white/40 hover:bg-white/70"
-                        }`}
+                        className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all ${selectedItem.index === idx ? "bg-white scale-125" : "bg-white/40 hover:bg-white/70"
+                          }`}
                       />
                     ))}
                   </div>
@@ -242,11 +240,10 @@ export default function EstructurasPage() {
               <button
                 key={cat.label}
                 onClick={() => setActiveCategory(cat.label)}
-                className={`flex items-center gap-2.5 px-6 py-3 rounded-full text-base font-semibold whitespace-nowrap transition-all ${
-                  activeCategory === cat.label
+                className={`flex items-center gap-2.5 px-6 py-3 rounded-full text-base font-semibold whitespace-nowrap transition-all ${activeCategory === cat.label
                     ? "bg-brand-blue text-white shadow-md shadow-brand-blue/20"
                     : "bg-brand-light/60 text-brand-dark/70 hover:bg-brand-light hover:text-brand-dark"
-                }`}
+                  }`}
               >
                 <cat.icon className="w-5 h-5" />
                 {cat.label}
@@ -283,10 +280,10 @@ export default function EstructurasPage() {
                     {/* Image */}
                     <div className="relative h-64 lg:h-80 xl:h-96 overflow-hidden bg-gray-100">
                       {Array.isArray(stand.image) ? (
-                        <StandImageCarousel 
-                          images={stand.image} 
-                          alt={stand.title} 
-                          onImageClick={(images, idx) => setSelectedItem({ images, index: idx })} 
+                        <StandImageCarousel
+                          images={stand.image}
+                          alt={stand.title}
+                          onImageClick={(images, idx) => setSelectedItem({ images, index: idx })}
                         />
                       ) : (
                         <div className="relative w-full h-full cursor-pointer" onClick={handleOpenLightbox}>
@@ -451,7 +448,7 @@ export default function EstructurasPage() {
               <h3 className="text-2xl md:text-3xl font-display font-extrabold text-brand-blue mb-8">
                 Datos de Contacto
               </h3>
-              
+
               <ul className="space-y-6 mb-10">
                 <li className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-brand-blue/5 border border-brand-blue/10 flex items-center justify-center text-brand-accent flex-shrink-0">
@@ -462,7 +459,7 @@ export default function EstructurasPage() {
                     <p className="text-brand-dark/70 text-base md:text-lg">Cra 87 # 84 A – 25 , Bogotá</p>
                   </div>
                 </li>
-                
+
                 <li className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-brand-blue/5 border border-brand-blue/10 flex items-center justify-center text-brand-accent flex-shrink-0">
                     <FiPhone className="w-6 h-6" />
@@ -472,7 +469,7 @@ export default function EstructurasPage() {
                     <p className="text-brand-dark/70 text-base md:text-lg">312 557 54 77 – 313 882 31 64</p>
                   </div>
                 </li>
-                
+
                 <li className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-brand-blue/5 border border-brand-blue/10 flex items-center justify-center text-brand-accent flex-shrink-0">
                     <FiMail className="w-6 h-6" />

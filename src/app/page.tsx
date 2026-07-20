@@ -784,7 +784,7 @@ export default function HomePage() {
               </button>
 
               {/* Slider Viewport */}
-              <div className="overflow-hidden w-full py-2">
+              <div className="overflow-hidden w-full py-10">
                 {/* Inline stylesheet to ensure CSS variables are always loaded responsively without dev-server/caching mismatches */}
                 <style>{`
                   .logo-track-custom {
@@ -815,13 +815,13 @@ export default function HomePage() {
                       className="flex-shrink-0 flex items-center justify-center px-3"
                       style={{ width: "var(--logo-width)" }}
                     >
-                      <div className="bg-white rounded-2xl p-4 w-full h-28 md:h-32 flex items-center justify-center shadow-md opacity-65 hover:opacity-100 transition-all duration-300 hover:scale-120 select-none">
+                      <div className="bg-white rounded-2xl p-4 w-full h-36 md:h-44 flex items-center justify-center shadow-md hover:shadow-xl transition-all duration-300 transform-gpu hover:scale-130 select-none">
                         <Image
                           src={`/imagenes/empresas/${logo}`}
                           alt={`Logo cliente ${idx + 1}`}
-                          width={200}
-                          height={100}
-                          className="object-contain max-h-16 md:max-h-24 pointer-events-none"
+                          width={240}
+                          height={120}
+                          className="object-contain max-h-24 md:max-h-32 pointer-events-none"
                         />
                       </div>
                     </div>
