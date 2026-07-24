@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { FiArrowRight } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiArrowRight, FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { categories, stands } from "./data";
 
@@ -19,7 +19,7 @@ const fadeInUp = {
 
 // Helper function to extract and format product name from image URL
 const getProductNameFromUrl = (url: string) => {
-  if (!url || url.startsWith("http")) return ""; // Ignore external urls if they don't look clean
+  if (!url || url.startsWith("http")) return "";
   const parts = url.split("/");
   const filenameWithExt = parts[parts.length - 1];
   const filename = filenameWithExt.split(".")[0];
@@ -27,10 +27,29 @@ const getProductNameFromUrl = (url: string) => {
   return decoded.split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 };
 
-
-
 export default function StandsPage() {
   const [activeCategory, setActiveCategory] = useState("Todos");
+  const [selectedItem, setSelectedItem] = useState<{ images: string[], index: number } | null>(null);
+
+  const handleLightboxNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedItem) {
+      setSelectedItem({
+        ...selectedItem,
+        index: selectedItem.index === selectedItem.images.length - 1 ? 0 : selectedItem.index + 1
+      });
+    }
+  };
+
+  const handleLightboxPrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedItem) {
+      setSelectedItem({
+        ...selectedItem,
+        index: selectedItem.index === 0 ? selectedItem.images.length - 1 : selectedItem.index - 1
+      });
+    }
+  };
 
   const filteredStands =
     activeCategory === "Todos"
@@ -39,6 +58,87 @@ export default function StandsPage() {
 
   return (
     <>
+      {/* ============ LIGHTBOX MODAL ============ */}
+      <AnimatePresence>
+        {selectedItem && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md p-4 md:p-8"
+            onClick={() => setSelectedItem(null)}
+          >
+            {/* Close Button */}
+            <button
+              className="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 rounded-full p-3 transition-all z-[60]"
+              onClick={() => setSelectedItem(null)}
+            >
+              <FiX className="w-6 h-6 md:w-8 md:h-8" />
+            </button>
+
+            {/* Main Image Container */}
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="relative w-full h-full max-w-6xl flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative w-full h-[70vh] md:h-[85vh]">
+                <Image
+                  src={selectedItem.images[selectedItem.index]}
+                  alt="Imagen ampliada"
+                  fill
+                  className="object-contain"
+                  quality={100}
+                />
+
+                {/* Lightbox Product Name Badge */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
+                  <span className="bg-brand-blue text-white text-sm md:text-base font-extrabold px-6 py-3.5 rounded-xl shadow-2xl border border-white/20 tracking-wider whitespace-nowrap">
+                    {getProductNameFromUrl(selectedItem.images[selectedItem.index])}
+                  </span>
+                </div>
+              </div>
+
+              {/* Carousel Controls (only if multiple images) */}
+              {selectedItem.images.length > 1 && (
+                <>
+                  <button
+                    onClick={handleLightboxPrev}
+                    className="absolute left-0 md:-left-12 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 bg-black/50 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-all shadow-xl z-[60]"
+                  >
+                    <FiChevronLeft className="w-8 h-8 md:w-10 md:h-10" />
+                  </button>
+                  <button
+                    onClick={handleLightboxNext}
+                    className="absolute right-0 md:-right-12 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 bg-black/50 hover:bg-black/80 text-white rounded-full flex items-center justify-center transition-all shadow-xl z-[60]"
+                  >
+                    <FiChevronRight className="w-8 h-8 md:w-10 md:h-10" />
+                  </button>
+
+                  {/* Dots Indicator */}
+                  <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-2.5 z-[60]">
+                    {selectedItem.images.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedItem({ ...selectedItem, index: idx });
+                        }}
+                        className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all ${
+                          selectedItem.index === idx ? "bg-white scale-125" : "bg-white/40 hover:bg-white/70"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* ============ HEADER ============ */}
       <section className="bg-gradient-to-br from-brand-blue via-brand-blue-light to-brand-blue pt-36 lg:pt-44 pb-20">
         <div className="max-w-7xl mx-auto px-6">
@@ -97,78 +197,83 @@ export default function StandsPage() {
       <section className="py-16 bg-brand-light/20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredStands.map((stand, i) => (
-              <motion.div
-                key={stand.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-30px" }}
-                variants={fadeInUp}
-                custom={i}
-                layout
-              >
-                <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-brand-light">
-                  {/* Image */}
-                  <div className="relative h-56 overflow-hidden">
-                    <Image
-                      src={stand.image}
-                      alt={stand.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    {/* Product Name Badge */}
-                    {getProductNameFromUrl(stand.image) && (
-                      <div className="absolute bottom-4 left-4 z-10 pointer-events-none">
-                        <span className="bg-brand-blue text-white text-sm font-extrabold px-5 py-2.5 rounded-xl shadow-lg border border-white/15 uppercase tracking-wider">
-                          {getProductNameFromUrl(stand.image)}
+            {filteredStands.map((stand, i) => {
+              const handleOpenLightbox = () => {
+                if (Array.isArray(stand.image)) {
+                  setSelectedItem({ images: stand.image, index: 0 });
+                } else {
+                  setSelectedItem({ images: [stand.image], index: 0 });
+                }
+              };
+
+              return (
+                <motion.div
+                  key={stand.title}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-30px" }}
+                  variants={fadeInUp}
+                  custom={i}
+                  layout
+                >
+                  <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-brand-light">
+                    {/* Image */}
+                    <div className="relative h-56 overflow-hidden cursor-pointer" onClick={handleOpenLightbox}>
+                      <Image
+                        src={stand.image}
+                        alt={stand.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                      {/* Hover overlay button */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <span className="bg-white text-brand-blue px-5 py-2 rounded-full text-sm font-semibold shadow-lg">
+                          Ampliar foto
                         </span>
                       </div>
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    {/* Hover overlay button */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="bg-white text-brand-blue px-5 py-2 rounded-full text-sm font-semibold shadow-lg">
-                        Ver detalles
-                      </span>
+                      {/* Badge */}
+                      <div className="absolute top-4 left-4 z-10 pointer-events-none">
+                        <span className="bg-brand-blue/90 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                          {stand.category}
+                        </span>
+                      </div>
                     </div>
-                    {/* Badge */}
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-brand-blue/90 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
-                        {stand.category}
-                      </span>
-                    </div>
-                  </div>
 
-                  {/* Content */}
-                  <div className="p-5">
-                    <h3 className="text-base font-bold text-brand-dark mb-1 group-hover:text-brand-blue transition-colors">
-                      {stand.title}
-                    </h3>
-                    <p className="text-xs text-brand-accent font-semibold mb-2">
-                      {stand.dimensions}
-                    </p>
-                    <p className="text-sm text-brand-dark/55 leading-relaxed mb-4">
-                      {stand.description}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <a
-                        href={`https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20interesa%20cotizar%20el%20${encodeURIComponent(stand.title)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
-                      >
-                        <FaWhatsapp className="w-4 h-4" />
-                        Cotizar
-                      </a>
-                      <span className="text-brand-accent text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer">
-                        Detalles
-                        <FiArrowRight className="w-3.5 h-3.5" />
-                      </span>
+                    {/* Content */}
+                    <div className="p-5">
+                      <h3 className="text-base font-bold text-brand-dark mb-1 group-hover:text-brand-blue transition-colors">
+                        {stand.title}
+                      </h3>
+                      <p className="text-xs text-brand-accent font-semibold mb-2">
+                        {stand.dimensions}
+                      </p>
+                      <p className="text-sm text-brand-dark/55 leading-relaxed mb-4">
+                        {stand.description}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <a
+                          href={`https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20interesa%20cotizar%20el%20${encodeURIComponent(stand.title)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
+                        >
+                          <FaWhatsapp className="w-4 h-4" />
+                          Cotizar
+                        </a>
+                        <button
+                          onClick={handleOpenLightbox}
+                          className="text-brand-accent text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer"
+                        >
+                          Detalles
+                          <FiArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
 
           {filteredStands.length === 0 && (
