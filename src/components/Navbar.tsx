@@ -79,7 +79,7 @@ export function Navbar() {
         {/* CTA Button */}
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n"
+            href="https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-brand-green hover:bg-brand-green-dark text-white px-7 py-3 rounded-full text-base font-semibold transition-all hover:shadow-lg hover:shadow-brand-green/30 hover:-translate-y-0.5 flex items-center gap-2 animate-pulse-glow"
@@ -130,7 +130,7 @@ export function Navbar() {
                 </Link>
               ))}
               <a
-                href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n"
+                href="https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block mt-6 bg-brand-green text-white text-center px-6 py-3.5 rounded-full text-base font-semibold transition-all hover:bg-brand-green-dark"

@@ -128,7 +128,7 @@ export function Footer() {
                 <FiPhone className="w-4 h-4 mt-0.5 text-brand-accent-light flex-shrink-0" />
                 <div className="text-sm">
                   <a
-                    href="tel:+573125575477"
+                    href="tel:+573178394478"
                     className="text-white/70 hover:text-white transition-colors"
                   >
                     312 557 5477

@@ -50,3 +50,36 @@ Ejemplo de estructura en `data.ts`:
 }
 ```
 
+## Skill: Crear Landing de Sub-categoría (Landing Sección)
+
+**Propósito:** Extraer un arreglo grande de imágenes de una tarjeta principal (ej. "Mesas") y crear una sub-landing dedicada (`/mobiliario/mesas`) con múltiples tarjetas, cada una representando un "tipo" específico de esa categoría con su propio carrusel y botón de WhatsApp contextual.
+
+### 1. Refactorizar Data (`data.ts` correspondiente)
+- Localiza la tarjeta principal de la [CATEGORÍA] en el array general.
+- Reemplaza el gran arreglo de imágenes de esa tarjeta por **una sola imagen representativa** (string).
+- Crea una nueva interfaz en el archivo (si no existe) basada en:
+  ```ts
+  export interface SubCategoryData {
+    title: string;
+    slug: string;
+    images: string[];
+    description: string;
+  }
+  ```
+- Crea y exporta un nuevo arreglo (ej. `mesasData: SubCategoryData[]`) donde agrupes las imágenes originales por tipo/subcategoría, asignándole a cada una un título, slug, arreglo de imágenes y una breve descripción.
+
+### 2. Actualizar Página Padre (ej. `/mobiliario/page.tsx`)
+- En el grid principal, localiza donde se renderiza la tarjeta de la [CATEGORÍA].
+- Modifica la lógica para que esa tarjeta específica actúe como un enlace (`<Link>`) hacia la nueva ruta (ej. `/mobiliario/mesas`).
+- El botón de contacto general de esa tarjeta debe cambiar a "Ver Catálogo" y apuntar a la nueva ruta, en lugar de abrir el lightbox o ir a WhatsApp general.
+
+### 3. Crear Nueva Sub-landing (`/[ruta_padre]/[categoría]/page.tsx`)
+- Crea el nuevo archivo de página clonando la estética y estructura de la página padre o basándote en `/mobiliario/sillas/page.tsx`.
+- **Header:** Incluye un breadcrumb (ej. `Inicio / Mobiliario / Mesas`) y un botón claro para "Volver a la página anterior".
+- **Grid de Productos:** Itera sobre el nuevo arreglo creado en el Paso 1.
+- **Tarjetas Individuales:** Deben incluir el carrusel corto, título, descripción y el badge de categoría.
+- **Integración WhatsApp:** El botón "Cotizar" en cada tarjeta debe apuntar a WhatsApp (573125575477) con el texto pre-llenado: `Hola Multiespacios, me interesa la [Título del producto] para mi evento`.
+- **Lightbox:** Reutiliza el componente modal/lightbox existente para que al hacer clic en "Detalles" se amplíen las fotos del sub-carrusel.
+
+### 4. Verificación
+- Ejecuta `npm run build` o verifica en el servidor de desarrollo que la nueva ruta cargue sin errores de TypeScript y la navegación fluya correctamente entre padre e hijo.

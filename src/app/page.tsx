@@ -307,7 +307,7 @@ export default function HomePage() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <a
-                href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n"
+                href="https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25 hover:-translate-y-0.5"
@@ -662,10 +662,10 @@ export default function HomePage() {
               <a
                 href={
                   activeTab === "alquiler"
-                    ? "https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20interesa%20cotizar%20el%20ALQUILER%20del%20Tobogán%20Arcoíris%20para%20un%20evento."
+                    ? "https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20me%20interesa%20cotizar%20el%20ALQUILER%20del%20Tobogán%20Arcoíris%20para%20un%20evento."
                     : activeTab === "sociedad"
-                    ? "https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20interesa%20proponer%20una%20ALIANZA%20COMERCIAL%20o%20SOCIEDAD%20para%20el%20Tobogán%20Arcoíris."
-                    : "https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20quiero%20recibir%20información%20sobre%20la%20COMPRA%20del%20Tobogán%20Arcoíris."
+                    ? "https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20me%20interesa%20proponer%20una%20ALIANZA%20COMERCIAL%20o%20SOCIEDAD%20para%20el%20Tobogán%20Arcoíris."
+                    : "https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20quiero%20recibir%20información%20sobre%20la%20COMPRA%20del%20Tobogán%20Arcoíris."
                 }
                 target="_blank"
                 rel="noopener noreferrer"
@@ -921,7 +921,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-brand-dark/80 uppercase tracking-wider mb-1">Teléfono y WhatsApp</h4>
-                    <p className="text-brand-dark/70 text-base md:text-lg">312 557 54 77 – 313 882 31 64</p>
+                    <p className="text-brand-dark/70 text-base md:text-lg">317 839 44 78 – 313 882 31 64</p>
                   </div>
                 </li>
                 
@@ -976,7 +976,7 @@ export default function HomePage() {
             </p>
             <div className="flex justify-center">
               <a
-                href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20quiero%20cotizar%20un%20evento"
+                href="https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20quiero%20cotizar%20un%20evento"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25"
