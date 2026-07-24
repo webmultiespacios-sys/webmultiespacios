@@ -268,37 +268,59 @@ export default function MobiliarioPage() {
                 >
                   <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-brand-light">
                     {/* Image */}
-                    <div className="relative h-72 overflow-hidden bg-white">
-                      {Array.isArray(stand.image) ? (
-                        <StandImageCarousel
-                          images={stand.image}
+                    {stand.category === "Sillas" ? (
+                      <Link href="/mobiliario/sillas" className="block relative h-72 overflow-hidden bg-white">
+                        <Image
+                          src={stand.image as string}
                           alt={stand.title}
-                          onImageClick={(images, idx) => setSelectedItem({ images, index: idx })}
+                          fill
+                          className="object-contain p-4 transition-transform duration-700 group-hover:scale-105"
                         />
-                      ) : (
-                        <div className="relative w-full h-full cursor-pointer bg-white" onClick={handleOpenLightbox}>
-                          <Image
-                            src={stand.image}
-                            alt={stand.title}
-                            fill
-                            className="object-contain p-4 transition-transform duration-700 group-hover:scale-105"
-                          />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                          <span className="bg-white text-brand-blue px-6 py-3 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
+                            Ver catálogo <FiArrowRight className="w-4 h-4" />
+                          </span>
                         </div>
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                      {/* Hover overlay button */}
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                        <span className="bg-white text-brand-blue px-6 py-3 rounded-full text-sm font-bold shadow-lg">
-                          Ampliar foto
-                        </span>
+                        <div className="absolute top-4 left-4 z-10 pointer-events-none">
+                          <span className="bg-brand-blue/90 text-white text-xs font-semibold px-4 py-1.5 rounded-full backdrop-blur-sm shadow-md">
+                            {stand.category}
+                          </span>
+                        </div>
+                      </Link>
+                    ) : (
+                      <div className="relative h-72 overflow-hidden bg-white">
+                        {Array.isArray(stand.image) ? (
+                          <StandImageCarousel
+                            images={stand.image}
+                            alt={stand.title}
+                            onImageClick={(images, idx) => setSelectedItem({ images, index: idx })}
+                          />
+                        ) : (
+                          <div className="relative w-full h-full cursor-pointer bg-white" onClick={handleOpenLightbox}>
+                            <Image
+                              src={stand.image}
+                              alt={stand.title}
+                              fill
+                              className="object-contain p-4 transition-transform duration-700 group-hover:scale-105"
+                            />
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                        {/* Hover overlay button */}
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                          <span className="bg-white text-brand-blue px-6 py-3 rounded-full text-sm font-bold shadow-lg">
+                            Ampliar foto
+                          </span>
+                        </div>
+                        {/* Badge */}
+                        <div className="absolute top-4 left-4 z-10 pointer-events-none">
+                          <span className="bg-brand-blue/90 text-white text-xs font-semibold px-4 py-1.5 rounded-full backdrop-blur-sm shadow-md">
+                            {stand.category}
+                          </span>
+                        </div>
                       </div>
-                      {/* Badge */}
-                      <div className="absolute top-4 left-4 z-10 pointer-events-none">
-                        <span className="bg-brand-blue/90 text-white text-xs font-semibold px-4 py-1.5 rounded-full backdrop-blur-sm shadow-md">
-                          {stand.category}
-                        </span>
-                      </div>
-                    </div>
+                    )}
 
                     {/* Content */}
                     <div className="p-5 md:p-6">
@@ -312,22 +334,39 @@ export default function MobiliarioPage() {
                         {stand.description}
                       </p>
                       <div className="flex items-center justify-between pt-3 border-t border-brand-light/50">
-                        <a
-                          href={`https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20interesa%20cotizar%20${encodeURIComponent(stand.title)}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
-                        >
-                          <FaWhatsapp className="w-4 h-4" />
-                          Cotizar
-                        </a>
-                        <button
-                          onClick={handleOpenLightbox}
-                          className="text-brand-accent text-sm font-semibold flex items-center gap-1 group-hover:gap-1.5 transition-all cursor-pointer"
-                        >
-                          Detalles
-                          <FiArrowRight className="w-3.5 h-3.5" />
-                        </button>
+                        {stand.category === "Sillas" ? (
+                          <>
+                            <span className="text-sm font-semibold text-brand-dark/50">
+                              21 tipos disponibles
+                            </span>
+                            <Link
+                              href="/mobiliario/sillas"
+                              className="text-brand-blue text-sm font-bold flex items-center gap-1 group-hover:gap-1.5 transition-all cursor-pointer"
+                            >
+                              Ver Catálogo
+                              <FiArrowRight className="w-3.5 h-3.5" />
+                            </Link>
+                          </>
+                        ) : (
+                          <>
+                            <a
+                              href={`https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20interesa%20cotizar%20${encodeURIComponent(stand.title)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
+                            >
+                              <FaWhatsapp className="w-4 h-4" />
+                              Cotizar
+                            </a>
+                            <button
+                              onClick={handleOpenLightbox}
+                              className="text-brand-accent text-sm font-semibold flex items-center gap-1 group-hover:gap-1.5 transition-all cursor-pointer"
+                            >
+                              Detalles
+                              <FiArrowRight className="w-3.5 h-3.5" />
+                            </button>
+                          </>
+                        )}
                       </div>
                     </div>
                   </div>
