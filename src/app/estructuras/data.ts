@@ -119,7 +119,9 @@ export const stands: Stand[] = [
     title: "Estructura Scaffold",
     category: "Estructuras",
     dimensions: "Personalizable",
-    image: placeholderImg,
+    image: [
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Scaffold/estructura-scaffold.webp"
+    ],
     description: "Andamiaje industrial resistente para grandes montajes, torres de sonido, pantallas y soportes de alto impacto.",
   },
   {
@@ -167,7 +169,10 @@ export const stands: Stand[] = [
     title: "Pórtico",
     category: "Estructuras",
     dimensions: "Personalizable",
-    image: placeholderImg,
+    image: [
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Portico/portico-truss.webp",
+      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Portico/portico-scaffold.webp"
+    ],
     description: "Estructura de bienvenida e identificación para eventos, carreras deportivas o entrada principal de pabellones.",
   },
   {
