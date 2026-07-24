@@ -27,6 +27,60 @@ const getProductNameFromUrl = (url: string) => {
   return decoded.split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 };
 
+// Simple Carousel Component for Stands with multiple images
+function StandImageCarousel({ images, alt, onImageClick }: { images: string[]; alt: string, onImageClick: (images: string[], index: number) => void }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  return (
+    <div className="relative w-full h-full group/carousel cursor-pointer" onClick={() => onImageClick(images, currentIndex)}>
+      <Image
+        src={images[currentIndex]}
+        alt={`${alt} - Imagen ${currentIndex + 1}`}
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={handlePrev}
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/30 hover:bg-black/60 text-white rounded-full flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-opacity z-20"
+          >
+            <FiChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/30 hover:bg-black/60 text-white rounded-full flex items-center justify-center opacity-0 group-hover/carousel:opacity-100 transition-opacity z-20"
+          >
+            <FiChevronRight className="w-6 h-6" />
+          </button>
+          <div className="absolute bottom-4 right-4 flex justify-center gap-2 z-20">
+            {images.map((_, idx) => (
+              <div
+                key={idx}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  currentIndex === idx ? "bg-white scale-125" : "bg-white/50"
+                }`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function StandsPage() {
   const [activeCategory, setActiveCategory] = useState("Todos");
   const [selectedItem, setSelectedItem] = useState<{ images: string[], index: number } | null>(null);
@@ -196,12 +250,14 @@ export default function StandsPage() {
       {/* ============ GALLERY ============ */}
       <section className="py-16 bg-brand-light/20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
             {filteredStands.map((stand, i) => {
               const handleOpenLightbox = () => {
                 if (Array.isArray(stand.image)) {
-                  setSelectedItem({ images: stand.image, index: 0 });
-                } else {
+                  if (stand.image.length > 0) {
+                    setSelectedItem({ images: stand.image, index: 0 });
+                  }
+                } else if (stand.image) {
                   setSelectedItem({ images: [stand.image], index: 0 });
                 }
               };
@@ -218,55 +274,69 @@ export default function StandsPage() {
                 >
                   <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-brand-light">
                     {/* Image */}
-                    <div className="relative h-56 overflow-hidden cursor-pointer" onClick={handleOpenLightbox}>
-                      <Image
-                        src={stand.image}
-                        alt={stand.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
+                    <div className="relative h-64 lg:h-80 overflow-hidden bg-gray-100">
+                      {Array.isArray(stand.image) && stand.image.length > 0 ? (
+                        <StandImageCarousel
+                          images={stand.image}
+                          alt={stand.title}
+                          onImageClick={(images, idx) => setSelectedItem({ images, index: idx })}
+                        />
+                      ) : Array.isArray(stand.image) && stand.image.length === 0 ? (
+                        <div className="relative w-full h-full flex items-center justify-center bg-brand-light/50">
+                          <span className="text-sm font-semibold text-brand-dark/45">Próximamente</span>
+                        </div>
+                      ) : (
+                        <div className="relative w-full h-full cursor-pointer" onClick={handleOpenLightbox}>
+                          <Image
+                            src={stand.image as string}
+                            alt={stand.title}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                        </div>
+                      )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                       {/* Hover overlay button */}
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                        <span className="bg-white text-brand-blue px-5 py-2 rounded-full text-sm font-semibold shadow-lg">
-                          Ampliar foto
+                        <span className="bg-white text-brand-blue px-6 py-3 rounded-full text-sm font-bold shadow-lg">
+                          Ampliar fotos
                         </span>
                       </div>
                       {/* Badge */}
                       <div className="absolute top-4 left-4 z-10 pointer-events-none">
-                        <span className="bg-brand-blue/90 text-white text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">
+                        <span className="bg-brand-blue/90 text-white text-xs font-semibold px-4 py-1.5 rounded-full backdrop-blur-sm shadow-md">
                           {stand.category}
                         </span>
                       </div>
                     </div>
 
                     {/* Content */}
-                    <div className="p-5">
-                      <h3 className="text-base font-bold text-brand-dark mb-1 group-hover:text-brand-blue transition-colors">
+                    <div className="p-6 md:p-8">
+                      <h3 className="text-xl lg:text-2xl font-bold text-brand-dark mb-2 group-hover:text-brand-blue transition-colors">
                         {stand.title}
                       </h3>
-                      <p className="text-xs text-brand-accent font-semibold mb-2">
+                      <p className="text-sm lg:text-base text-brand-accent font-semibold mb-4">
                         {stand.dimensions}
                       </p>
-                      <p className="text-sm text-brand-dark/55 leading-relaxed mb-4">
+                      <p className="text-base text-brand-dark/60 leading-relaxed mb-6">
                         {stand.description}
                       </p>
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between pt-4 border-t border-brand-light/50">
                         <a
                           href={`https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20interesa%20cotizar%20el%20${encodeURIComponent(stand.title)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
+                          className="inline-flex items-center gap-2 text-base font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
                         >
-                          <FaWhatsapp className="w-4 h-4" />
+                          <FaWhatsapp className="w-5 h-5" />
                           Cotizar
                         </a>
                         <button
                           onClick={handleOpenLightbox}
-                          className="text-brand-accent text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all cursor-pointer"
+                          className="text-brand-accent text-base font-semibold flex items-center gap-1.5 group-hover:gap-2.5 transition-all cursor-pointer"
                         >
                           Detalles
-                          <FiArrowRight className="w-3.5 h-3.5" />
+                          <FiArrowRight className="w-4 h-4" />
                         </button>
                       </div>
                     </div>
