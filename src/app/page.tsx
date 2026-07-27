@@ -463,7 +463,7 @@ export default function HomePage() {
         {/* Fondo Decorativo Abstracto */}
         <div 
           className="absolute inset-0 z-0 opacity-[0.25] bg-cover bg-center bg-no-repeat" 
-          style={{ backgroundImage: "url('/imagenes/fondos/bg-abstract.png')" }} 
+          style={{ backgroundImage: "url('/imagenes/fondos/bg-abstract.webp')" }} 
         />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <motion.div
