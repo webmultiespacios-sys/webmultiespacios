@@ -78,6 +78,30 @@ const staticSections: SearchItem[] = [
     url: "/stands",
     keywords: ["stand", "feria", "exposicion", "octanorm", "paneleria", "backing", "estibas"],
   },
+  {
+    id: "sec-atracciones",
+    title: "Atracciones para Eventos",
+    category: "Sección",
+    description: "Inflables gigantes, toboganes, carros chocones, muro de escalar, jumping y más.",
+    url: "/atracciones",
+    keywords: ["atraccion", "inflable", "tobogan", "jumping", "muro", "escalar", "chocones", "cuatrimoto", "ninja"],
+  },
+  {
+    id: "sec-produccion",
+    title: "Producción de Eventos",
+    category: "Sección",
+    description: "Producción integral de eventos corporativos, gubernamentales, ferias regionales y universitarios.",
+    url: "/produccion",
+    keywords: ["produccion", "evento", "corporativo", "gubernamental", "feria", "universidad", "marca"],
+  },
+  {
+    id: "sec-campamentos",
+    title: "Campamentos y Bodegas",
+    category: "Sección",
+    description: "Campamentos temporales, hangares industriales y pabellones de gran escala para proyectos en campo.",
+    url: "/campamentos",
+    keywords: ["campamento", "bodega", "hangar", "pabellon", "obra", "mineria", "construccion", "temporal"],
+  },
 ];
 
 // Generador dinámico a partir de las fotos y datos del portafolio

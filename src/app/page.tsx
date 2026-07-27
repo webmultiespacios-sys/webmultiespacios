@@ -19,7 +19,7 @@ import {
   FiPhone,
   FiMail,
 } from "react-icons/fi";
-import { FaWhatsapp, FaCampground, FaChair, FaCubes, FaLayerGroup } from "react-icons/fa";
+import { FaWhatsapp, FaCampground, FaChair, FaCubes, FaLayerGroup, FaVideo, FaWarehouse } from "react-icons/fa";
 import { SearchTriggerButton } from "@/components/SearchTriggerButton";
 
 const fadeInUp = {
@@ -82,6 +82,24 @@ const services = [
     image: "/imagenes/productosyservicios/p5.webp",
     href: "/atracciones",
     color: "from-rose-600 to-rose-800",
+  },
+  {
+    icon: FaVideo,
+    title: "Producción Eventos",
+    description:
+      "Producción integral de eventos corporativos, gubernamentales y ferias regionales con infraestructura y personal certificado.",
+    image: "/imagenes/productosyservicios/p5.webp",
+    href: "/produccion",
+    color: "from-indigo-600 to-indigo-800",
+  },
+  {
+    icon: FaWarehouse,
+    title: "Campamentos y Bodegas",
+    description:
+      "Instalaciones temporales para operaciones en campo: campamentos, hangares industriales y pabellones de gran escala.",
+    image: "/imagenes/productosyservicios/p5.webp",
+    href: "/campamentos",
+    color: "from-stone-600 to-stone-800",
   },
 ];
 

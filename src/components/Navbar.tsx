@@ -7,14 +7,21 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 
-const navLinks = [
+const navRow1 = [
   { label: "Inicio", href: "/" },
   { label: "Carpas", href: "/carpas" },
   { label: "Estructuras y Tarimas", href: "/estructuras" },
   { label: "Mobiliario", href: "/mobiliario" },
   { label: "Ferias y Stands", href: "/stands" },
-  { label: "Atracciones", href: "/atracciones" },
 ];
+
+const navRow2 = [
+  { label: "Atracciones", href: "/atracciones" },
+  { label: "Producción Eventos", href: "/produccion" },
+  { label: "Campamentos y Bodegas", href: "/campamentos" },
+];
+
+const allNavLinks = [...navRow1, ...navRow2];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,7 +48,7 @@ export function Navbar() {
     >
       <nav
         className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${
-          scrolled ? "h-20 py-2" : "h-32 py-4"
+          scrolled ? "h-20 py-2" : "h-32 lg:h-40 py-4"
         }`}
       >
         {/* Logo */}
@@ -52,27 +59,46 @@ export function Navbar() {
             width={300}
             height={112}
             className={`w-auto object-contain transition-all duration-500 ${
-              scrolled ? "h-14" : "h-28"
+              scrolled ? "h-14" : "h-28 lg:h-32"
             }`}
             priority
           />
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`px-5 py-2.5 text-base lg:text-lg font-semibold rounded-full transition-all duration-300 ${
-                pathname === link.href
-                  ? "text-white bg-white/15 shadow-sm"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+        {/* Desktop Nav — 2 filas */}
+        <div className="hidden lg:flex flex-col items-center gap-1">
+          {/* Fila 1 */}
+          <div className="flex items-center gap-2">
+            {navRow1.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`px-5 py-2.5 text-lg lg:text-xl font-semibold rounded-full transition-all duration-300 ${
+                  pathname === link.href
+                    ? "text-white bg-white/15 shadow-sm"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          {/* Fila 2 */}
+          <div className="flex items-center gap-2">
+            {navRow2.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`px-5 py-2.5 text-lg lg:text-xl font-semibold rounded-full transition-all duration-300 ${
+                  pathname === link.href
+                    ? "text-white bg-white/15 shadow-sm"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* CTA Button */}
@@ -115,7 +141,7 @@ export function Navbar() {
             className="lg:hidden overflow-hidden bg-brand-blue border-t border-white/10"
           >
             <div className="px-6 py-6 space-y-2">
-              {navLinks.map((link) => (
+              {allNavLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}

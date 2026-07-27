@@ -298,16 +298,20 @@ export default function MobiliarioPage() {
                       </Link>
                     ) : (
                       <div className="relative h-72 overflow-hidden bg-white">
-                        {Array.isArray(stand.image) ? (
+                        {Array.isArray(stand.image) && stand.image.length > 0 ? (
                           <StandImageCarousel
                             images={stand.image}
                             alt={stand.title}
                             onImageClick={(images, idx) => setSelectedItem({ images, index: idx })}
                           />
+                        ) : Array.isArray(stand.image) && stand.image.length === 0 ? (
+                          <div className="relative w-full h-full flex items-center justify-center bg-brand-light/50">
+                            <span className="text-sm font-semibold text-brand-dark/45">Próximamente</span>
+                          </div>
                         ) : (
                           <div className="relative w-full h-full cursor-pointer bg-white" onClick={handleOpenLightbox}>
                             <Image
-                              src={stand.image}
+                              src={stand.image as string}
                               alt={stand.title}
                               fill
                               className="object-contain p-4 transition-transform duration-700 group-hover:scale-105"
