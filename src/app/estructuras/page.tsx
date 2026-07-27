@@ -251,8 +251,13 @@ export default function EstructurasPage() {
       </section>
 
       {/* ============ GALLERY ============ */}
-      <section className="py-16 bg-brand-light/20">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative py-16 bg-white min-h-[50vh] overflow-hidden">
+        {/* Fondo Decorativo Estructural */}
+        <div 
+          className="absolute inset-0 z-0 opacity-[0.25] bg-cover bg-center bg-no-repeat" 
+          style={{ backgroundImage: "url('/imagenes/fondos/bg-structural.png')" }} 
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredStands.map((stand, i) => {
               const handleOpenLightbox = () => {

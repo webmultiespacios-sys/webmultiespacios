@@ -77,8 +77,13 @@ export default function AtraccionesPage() {
       </section>
 
       {/* ============ GALLERY ============ */}
-      <section className="py-16 bg-brand-light/20 min-h-[50vh]">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative py-16 bg-white min-h-[50vh] overflow-hidden">
+        {/* Fondo Decorativo Estructural */}
+        <div 
+          className="absolute inset-0 z-0 opacity-[0.25] bg-cover bg-center bg-no-repeat" 
+          style={{ backgroundImage: "url('/imagenes/fondos/bg-structural.png')" }} 
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((item, i) => {
               const whatsappText = `Hola Multiespacios, me interesan sus atracciones, específicamente: ${item.title}.`;

@@ -459,8 +459,13 @@ export default function HomePage() {
       </div>
 
       {/* ============ SERVICES SECTION ============ */}
-      <section className="pt-12 pb-24 bg-brand-light/30">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative pt-12 pb-24 bg-white overflow-hidden">
+        {/* Fondo Decorativo Abstracto */}
+        <div 
+          className="absolute inset-0 z-0 opacity-[0.25] bg-cover bg-center bg-no-repeat" 
+          style={{ backgroundImage: "url('/imagenes/fondos/bg-abstract.png')" }} 
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"
