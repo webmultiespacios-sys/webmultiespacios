@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { GlobalSearchModal } from "@/components/SearchModal";
 
 export const metadata: Metadata = {
   title: "Multiespacios S.A.S. | Alquiler de Carpas, Stands y Mobiliario para Eventos",
@@ -39,7 +40,9 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <GlobalSearchModal />
       </body>
     </html>
   );
 }
+

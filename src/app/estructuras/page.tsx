@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowRight, FiChevronLeft, FiChevronRight, FiMapPin, FiPhone, FiMail, FiX } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { categories, stands } from "./data";
+import { SearchTriggerButton } from "@/components/SearchTriggerButton";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -224,24 +225,28 @@ export default function EstructurasPage() {
         </div>
       </section>
 
-      {/* ============ FILTERS ============ */}
-      <section className="sticky top-20 z-30 bg-white/95 backdrop-blur-lg border-b border-brand-light shadow-sm">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap items-center justify-center gap-3 py-5">
+      {/* ============ FILTERS & SEARCH ============ */}
+      <section className="bg-white border-b border-brand-light shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
             {categories.map((cat) => (
               <button
                 key={cat.label}
                 onClick={() => setActiveCategory(cat.label)}
-                className={`flex items-center gap-2.5 px-6 py-3 rounded-full text-base font-semibold whitespace-nowrap transition-all ${activeCategory === cat.label
+                className={`flex items-center gap-2.5 px-6 py-3 rounded-full text-base font-semibold whitespace-nowrap transition-all ${
+                  activeCategory === cat.label
                     ? "bg-brand-blue text-white shadow-md shadow-brand-blue/20"
                     : "bg-brand-light/60 text-brand-dark/70 hover:bg-brand-light hover:text-brand-dark"
-                  }`}
+                }`}
               >
                 <cat.icon className="w-5 h-5" />
                 {cat.label}
               </button>
             ))}
           </div>
+
+          {/* Botón de búsqueda estático */}
+          <SearchTriggerButton className="flex-shrink-0" />
         </div>
       </section>
 

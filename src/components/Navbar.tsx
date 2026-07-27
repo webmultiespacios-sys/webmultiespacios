@@ -39,13 +39,12 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-
       <nav
         className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${
           scrolled ? "h-20 py-2" : "h-32 py-4"
         }`}
       >
-        {/* Logo (Tripled size: height 28 in reposo, 14 when scrolled) */}
+        {/* Logo */}
         <Link href="/" className="flex-shrink-0 relative block transition-all duration-500">
           <Image
             src="/imagenes/logos/image18.png"
@@ -59,7 +58,7 @@ export function Navbar() {
           />
         </Link>
 
-        {/* Desktop Nav (Reordered, bigger font, matching color scheme) */}
+        {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-2">
           {navLinks.map((link) => (
             <Link

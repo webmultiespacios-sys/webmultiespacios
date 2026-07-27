@@ -19,13 +19,8 @@ import {
   FiPhone,
   FiMail,
 } from "react-icons/fi";
-import {
-  FaWhatsapp,
-  FaCampground,
-  FaChair,
-  FaCubes,
-  FaLayerGroup,
-} from "react-icons/fa";
+import { FaWhatsapp, FaCampground, FaChair, FaCubes, FaLayerGroup } from "react-icons/fa";
+import { SearchTriggerButton } from "@/components/SearchTriggerButton";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -464,10 +459,18 @@ export default function HomePage() {
             <motion.p
               variants={fadeInUp}
               custom={1}
-              className="text-brand-dark/60 max-w-2xl mx-auto"
+              className="text-brand-dark/60 max-w-2xl mx-auto mb-6"
             >
               Equipos, estructuras y mobiliario de Alta calidad para todo tipo de eventos e instalaciones
             </motion.p>
+
+            <motion.div
+              variants={fadeInUp}
+              custom={2}
+              className="flex justify-center"
+            >
+              <SearchTriggerButton />
+            </motion.div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">

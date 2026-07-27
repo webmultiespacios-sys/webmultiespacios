@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowLeft, FiArrowRight, FiChevronLeft, FiChevronRight, FiMapPin, FiPhone, FiMail, FiX } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { sillasData } from "../data";
+import { SearchTriggerButton } from "@/components/SearchTriggerButton";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -229,6 +230,14 @@ export default function SillasPage() {
               </Link>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* ============ SEARCH BAR ============ */}
+      <section className="bg-white border-b border-brand-light shadow-sm py-4">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+          <span className="text-sm font-bold text-brand-dark/70 uppercase tracking-wider">Catálogo de Sillas (21 Referencias)</span>
+          <SearchTriggerButton />
         </div>
       </section>
 
