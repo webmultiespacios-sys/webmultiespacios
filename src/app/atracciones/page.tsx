@@ -47,7 +47,7 @@ export default function AtraccionesPage() {
               Atracciones <span className="text-brand-accent-light">para Eventos</span>
             </h1>
             <p className="text-lg text-white/70 leading-relaxed">
-              Inflables gigantes, toboganes, carros chocones, muros de escalar y mucho más. Atracciones de primera calidad para activar y entretener a todos tus invitados.
+              Toboganes gigantes, carros chocones, muros de escalar, jumping y mucho más. Atracciones de primera calidad para activar y entretener a todos tus invitados.
             </p>
           </motion.div>
         </div>
@@ -80,7 +80,7 @@ export default function AtraccionesPage() {
       <section className="relative py-16 bg-white min-h-[50vh] overflow-hidden">
         {/* Fondo Decorativo Estructural */}
         <div 
-          className="absolute inset-0 z-0 opacity-[0.25] bg-cover bg-center bg-no-repeat" 
+          className="absolute inset-0 z-0 opacity-[0.6] bg-[length:350px] md:bg-[length:500px] bg-center bg-repeat" 
           style={{ backgroundImage: "url('/imagenes/fondos/bg-structural.webp')" }} 
         />
         <div className="relative z-10 max-w-7xl mx-auto px-6">

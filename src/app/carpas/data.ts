@@ -19,7 +19,6 @@ export const categories: Category[] = [
   { label: "Pagodas", icon: FiHexagon },
   { label: "Polos", icon: FiTriangle },
   { label: "Pabellones", icon: FiMaximize },
-  { label: "Inflables", icon: FiCloud },
 ];
 
 export const stands: Stand[] = [
@@ -49,23 +48,11 @@ export const stands: Stand[] = [
     category: "Pabellones",
     dimensions: "Personalizable",
     image: [
-      "/imagenes/1_carpas/Carpa pabellon/carpa-pabellon-tarima.webp",
       "/imagenes/1_carpas/Carpa pabellon/carpa-pabellón.webp",
       "/imagenes/1_carpas/Carpa pabellon/carpa-pabellon-3x3.webp",
       "/imagenes/1_carpas/Carpa pabellon/carpa-pabellon-4x4.webp",
       "/imagenes/1_carpas/Carpa pabellon/carpa-pabellon-interior.webp"
     ],
     description: "Estructura modular de gran formato ideal para exposiciones, ferias o eventos corporativos masivos, ofreciendo máxima amplitud sin columnas intermedias.",
-  },
-  {
-    title: "Carpa Inflable",
-    category: "Inflables",
-    dimensions: "Personalizable",
-    image: [
-      "/imagenes/1_carpas/Carpa Inflable/carpa-inflable-2.webp",
-      "/imagenes/1_carpas/Carpa Inflable/carpa-inflable-iglu.webp",
-      "/imagenes/1_carpas/Carpa Inflable/carpa-inflable-concha.webp"
-    ],
-    description: "Carpas neumáticas modernas y llamativas, de rápida instalación. Ideales para stands publicitarios, puntos de hidratación y activaciones BTL.",
   }
 ];

@@ -27,7 +27,6 @@ export interface Atraccion {
 
 export const categories: Category[] = [
   { label: "Todos", icon: FiGrid },
-  { label: "Inflables", icon: FiWind },
   { label: "Toboganes", icon: FiZap },
   { label: "Jumping", icon: FiActivity },
   { label: "Muro de Escalar", icon: FiTarget },
@@ -39,14 +38,6 @@ export const categories: Category[] = [
 ];
 
 export const atracciones: Atraccion[] = [
-  {
-    title: "Inflables",
-    category: "Inflables",
-    dimensions: "Varios tamaños",
-    image: [],
-    description:
-      "Castillos inflables, estructuras de juego y obstáculos hinchables de primera calidad para actividades familiares, ferias y eventos corporativos.",
-  },
   {
     title: "Toboganes",
     category: "Toboganes",

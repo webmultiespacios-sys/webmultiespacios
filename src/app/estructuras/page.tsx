@@ -254,7 +254,7 @@ export default function EstructurasPage() {
       <section className="relative py-16 bg-white min-h-[50vh] overflow-hidden">
         {/* Fondo Decorativo Estructural */}
         <div 
-          className="absolute inset-0 z-0 opacity-[0.25] bg-cover bg-center bg-no-repeat" 
+          className="absolute inset-0 z-0 opacity-[0.6] bg-[length:350px] md:bg-[length:500px] bg-center bg-repeat" 
           style={{ backgroundImage: "url('/imagenes/fondos/bg-structural.webp')" }} 
         />
         <div className="relative z-10 max-w-7xl mx-auto px-6">

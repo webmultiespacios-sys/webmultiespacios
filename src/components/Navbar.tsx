@@ -66,7 +66,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav — 2 filas */}
-        <div className="hidden lg:flex flex-col items-center gap-1">
+        <div className="hidden lg:flex flex-col items-start gap-1">
           {/* Fila 1 */}
           <div className="flex items-center gap-2">
             {navRow1.map((link) => (
@@ -84,7 +84,7 @@ export function Navbar() {
             ))}
           </div>
           {/* Fila 2 */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center justify-start gap-2">
             {navRow2.map((link) => (
               <Link
                 key={link.href}

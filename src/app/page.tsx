@@ -78,7 +78,7 @@ const services = [
     icon: FiStar,
     title: "Atracciones",
     description:
-      "Alquiler de inflables gigantes, juegos mecánicos y atracciones interactivas ideales para activaciones familiares y corporativas.",
+      "Alquiler de atracciones interactivas, juegos mecánicos, jumping y toboganes gigantes ideales para activaciones familiares y corporativas.",
     image: "/imagenes/productosyservicios/p5.webp",
     href: "/atracciones",
     color: "from-rose-600 to-rose-800",
@@ -462,7 +462,7 @@ export default function HomePage() {
       <section className="relative pt-12 pb-24 bg-white overflow-hidden">
         {/* Fondo Decorativo Abstracto */}
         <div 
-          className="absolute inset-0 z-0 opacity-[0.25] bg-cover bg-center bg-no-repeat" 
+          className="absolute inset-0 z-0 opacity-[0.6] bg-[length:350px] md:bg-[length:500px] bg-center bg-repeat" 
           style={{ backgroundImage: "url('/imagenes/fondos/bg-abstract.webp')" }} 
         />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
