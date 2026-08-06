@@ -214,7 +214,7 @@ export default function CarpasPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <h1 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-5">
+            <h1 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-5 lg:mt-8">
               Carpas, Pabellones{" "}
               <span className="text-brand-accent-light">y techos</span>
             </h1>

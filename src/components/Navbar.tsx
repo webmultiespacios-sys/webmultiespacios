@@ -5,7 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiSearch } from "react-icons/fi";
+import { openSearchModal } from "@/components/SearchTriggerButton";
 
 const navRow1 = [
   { label: "Inicio", href: "/" },
@@ -98,6 +99,15 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            {/* Lupa buscador — al final de fila 2 */}
+            <button
+              onClick={openSearchModal}
+              aria-label="Abrir buscador"
+              className="ml-1 p-2.5 rounded-full text-white hover:scale-110 transition-all duration-300"
+              style={{ filter: "drop-shadow(0 0 6px rgba(255,255,255,0.55))" }}
+            >
+              <FiSearch className="w-5 h-5" />
+            </button>
           </div>
         </div>
 

@@ -340,7 +340,7 @@ export default function HomePage() {
         </div>
 
         {/* Floating Stats Bar (Desktop) */}
-        <div className="absolute bottom-12 left-0 right-0 z-20 max-w-7xl mx-auto px-6 hidden md:block">
+        <div className="absolute bottom-8 left-0 right-0 z-20 max-w-7xl mx-auto px-6 hidden md:block">
           <div className="bg-brand-blue/75 backdrop-blur-2xl rounded-3xl p-8 shadow-2xl border border-white/10">
             <div className="grid grid-cols-4 gap-8">
               {/* Stat 1 */}

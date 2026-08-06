@@ -50,4 +50,9 @@ Docs/
 /backups
 /scripts/convert-images.js
 
+# Documentos locales / Skills de IA (no subir a git)
+SKILL_*.md
+AGENTS.md
+
+
 

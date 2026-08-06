@@ -213,7 +213,7 @@ export default function MobiliarioPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <h1 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-5">
+            <h1 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-5 lg:mt-8">
               Mobiliario <span className="text-brand-accent-light">y Accesorios</span>
             </h1>
             <p className="text-lg text-white/70 leading-relaxed">
