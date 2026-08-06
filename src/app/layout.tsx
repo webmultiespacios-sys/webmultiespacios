@@ -5,6 +5,8 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { GlobalSearchModal } from "@/components/SearchModal";
 
+// Commit de prueba: verificación de gitignore y skill de optimización de imágenes
+
 export const metadata: Metadata = {
   title: "Multiespacios S.A.S. | Alquiler de Carpas, Stands y Mobiliario para Eventos",
   description:
