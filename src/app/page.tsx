@@ -43,7 +43,7 @@ const services = [
     title: "Carpas",
     description:
       "Carpas tipo pagoda, a dos aguas, hangares y domos especiales para garantizar la cobertura de tu evento al aire libre.",
-    image: "/imagenes/productosyservicios/p3.webp",
+    image: "/imagenes/1_carpas/Carpa polo/carpa-polo.webp",
     href: "/carpas",
     color: "from-emerald-600 to-emerald-800",
   },
@@ -52,7 +52,7 @@ const services = [
     title: "Estructuras y Tarimas",
     description:
       "Sistemas de truss, escenarios certificados, pasarelas y techos estructurados para producciones masivas.",
-    image: "/imagenes/productosyservicios/p4.webp",
+    image: "/imagenes/2_Estructuras_y_tarimas/Tarimas/Tarima Americana/tarima-americana.webp",
     href: "/estructuras",
     color: "from-purple-600 to-purple-800",
   },
@@ -61,7 +61,7 @@ const services = [
     title: "Mobiliario",
     description:
       "Alquiler de sillas, mesas, salas lounge, barras de bar y mobiliario de diseño exclusivo para tus invitados.",
-    image: "/imagenes/productosyservicios/p2.webp",
+    image: "/imagenes/3_Mobiliario/Camerinos/camerino-4.webp",
     href: "/mobiliario",
     color: "from-amber-600 to-amber-800",
   },
@@ -70,7 +70,7 @@ const services = [
     title: "Ferias y Stands",
     description:
       "Diseño, fabricación y montaje de stands personalizados para ferias y exposiciones comerciales de alto impacto.",
-    image: "/imagenes/productosyservicios/p1.webp",
+    image: "/imagenes/4 Ferias y Stands/Más tipos de Stands/stand-geometric.webp",
     href: "/stands",
     color: "from-blue-600 to-blue-800",
   },
@@ -79,7 +79,7 @@ const services = [
     title: "Atracciones",
     description:
       "Alquiler de atracciones interactivas, juegos mecánicos, jumping y toboganes gigantes ideales para activaciones familiares y corporativas.",
-    image: "/imagenes/productosyservicios/p5.webp",
+    image: "/imagenes/5_Atracciones/Carros chocones/carro-chocon-1.webp",
     href: "/atracciones",
     color: "from-rose-600 to-rose-800",
   },
@@ -88,7 +88,7 @@ const services = [
     title: "Producción Eventos",
     description:
       "Producción integral de eventos corporativos, gubernamentales y ferias regionales con infraestructura y personal certificado.",
-    image: "/imagenes/productosyservicios/p5.webp",
+    image: "/imagenes/6_Produccion_de_eventos/Ferias y Eventos Regionales/feria-regional-7.webp",
     href: "/produccion",
     color: "from-indigo-600 to-indigo-800",
   },
@@ -97,7 +97,7 @@ const services = [
     title: "Campamentos y Bodegas",
     description:
       "Instalaciones temporales para operaciones en campo: campamentos, hangares industriales y pabellones de gran escala.",
-    image: "/imagenes/productosyservicios/p5.webp",
+    image: "/imagenes/7_Campamentos y Bodegas/Campamento/campamento-7.webp",
     href: "/campamentos",
     color: "from-stone-600 to-stone-800",
   },
@@ -556,15 +556,20 @@ export default function HomePage() {
             className="mt-16 bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-brand-light"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-              {/* Image Half */}
-              <div className="relative h-[300px] lg:h-full lg:min-h-[450px] overflow-hidden group">
-                <Image
-                  src="/imagenes/Eventos/eventos.webp"
-                  alt="Producción de Eventos"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/20 via-transparent to-transparent" />
+              {/* Video Half */}
+              <div className="relative h-[400px] lg:h-full lg:min-h-[450px] w-full bg-black flex items-center justify-center p-4">
+                <div className="relative w-full max-w-[280px] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/JkB6ksN-ktE?autoplay=1&mute=1&loop=1&playlist=JkB6ksN-ktE&controls=1&rel=0&modestbranding=1"
+                    title="Producción de Eventos - Multiespacios"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="absolute inset-0"
+                  ></iframe>
+                </div>
               </div>
 
               {/* Content Half */}
@@ -582,13 +587,24 @@ export default function HomePage() {
                   Nos encargamos de todo tu evento, desde el montaje, luces, escenografía, sonido, transporte y cada detalle logístico para garantizar que tu producción sea un éxito total sin preocupaciones.
                 </p>
                 
-                <Link
-                  href="/produccion"
-                  className="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-green-dark text-white px-7 py-3.5 rounded-full text-sm md:text-base font-semibold transition-all shadow-lg hover:shadow-brand-green/30 hover:-translate-y-0.5"
-                >
-                  Ver más
-                  <FiArrowRight className="w-4 h-4" />
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20necesito%20Cotizar%20evento"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 bg-brand-green hover:bg-brand-green-dark text-white px-7 py-3.5 rounded-full text-sm md:text-base font-semibold transition-all shadow-lg hover:shadow-brand-green/30 hover:-translate-y-0.5"
+                  >
+                    <FaWhatsapp className="w-5 h-5" />
+                    Cotizar evento
+                  </a>
+                  <Link
+                    href="/produccion"
+                    className="inline-flex items-center justify-center gap-2 bg-brand-light/60 hover:bg-brand-light text-brand-dark px-7 py-3.5 rounded-full text-sm md:text-base font-semibold transition-all hover:-translate-y-0.5"
+                  >
+                    Ver galería
+                    <FiArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>
