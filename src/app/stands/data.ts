@@ -82,7 +82,14 @@ export const stands: Stand[] = [
     title: "Backings Publicitarios",
     category: "Backing",
     dimensions: "Personalizable",
-    image: [],
+    image: [
+      "/imagenes/4 Ferias y Stands/Backing/backing-1.webp",
+      "/imagenes/4 Ferias y Stands/Backing/backing-2.webp",
+      "/imagenes/4 Ferias y Stands/Backing/backing-3.webp",
+      "/imagenes/4 Ferias y Stands/Backing/backing-4.webp",
+      "/imagenes/4 Ferias y Stands/Backing/backing-5.webp",
+      "/imagenes/4 Ferias y Stands/Backing/backing-6.webp"
+    ],
     description: "Estructuras de soporte para banners de gran formato, ideales para ruedas de prensa, fondos fotográficos (photocalls) y branding corporativo.",
   },
   // 6. Más tipos de stands

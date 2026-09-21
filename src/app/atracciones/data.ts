@@ -10,6 +10,7 @@ import {
   FiAnchor,
   FiDroplet,
   FiBox,
+  FiCloud,
 } from "react-icons/fi";
 
 export interface Category {
@@ -35,6 +36,7 @@ export const categories: Category[] = [
   { label: "Guerrero Ninja", icon: FiAnchor },
   { label: "Botes de Pedal", icon: FiDroplet },
   { label: "Play Drump", icon: FiBox },
+  { label: "Inflables", icon: FiCloud },
 ];
 
 export const atracciones: Atraccion[] = [
@@ -42,7 +44,9 @@ export const atracciones: Atraccion[] = [
     title: "Toboganes",
     category: "Toboganes",
     dimensions: "Varios tamaños",
-    image: [],
+    image: [
+      "/imagenes/5_Atracciones/Tobogan/tobogan-1.webp",
+    ],
     description:
       "Toboganes gigantes acuáticos y secos para eventos al aire libre. Seguros, certificados y de alto impacto visual para todas las edades.",
   },
@@ -50,7 +54,9 @@ export const atracciones: Atraccion[] = [
     title: "Jumping",
     category: "Jumping",
     dimensions: "Estándar",
-    image: [],
+    image: [
+      "/imagenes/5_Atracciones/Jumping/jumping-1.webp",
+    ],
     description:
       "Camas elásticas profesionales tipo Jumping para activaciones físicas, festivales y eventos infantiles y juveniles.",
   },
@@ -58,7 +64,10 @@ export const atracciones: Atraccion[] = [
     title: "Muro de Escalar",
     category: "Muro de Escalar",
     dimensions: "Varios tamaños",
-    image: [],
+    image: [
+      "/imagenes/5_Atracciones/Muro de Escalar/muro-de-escalar-1.webp",
+      "/imagenes/5_Atracciones/Muro de Escalar/muro-de-escalar-2.webp",
+    ],
     description:
       "Muros de escalada portátiles con diferentes niveles de dificultad. Perfectos para activaciones deportivas, empresariales y eventos escolares.",
   },
@@ -66,7 +75,9 @@ export const atracciones: Atraccion[] = [
     title: "Carros Chocones",
     category: "Carros Chocones",
     dimensions: "Pista estándar",
-    image: [],
+    image: [
+      "/imagenes/5_Atracciones/Carros chocones/carro-chocon-1.webp",
+    ],
     description:
       "Pista de carros chocones eléctricos para entretenimiento de todas las edades. Incluye montaje de pista, vehículos y operación durante el evento.",
   },
@@ -74,7 +85,9 @@ export const atracciones: Atraccion[] = [
     title: "Cuatri Motos",
     category: "Cuatri Motos",
     dimensions: "Circuito personalizable",
-    image: [],
+    image: [
+      "/imagenes/5_Atracciones/Cuatri Motos/cuatrimoto-1.webp",
+    ],
     description:
       "Cuatrimotos de entretenimiento para niños y adultos. Circuito seguro con operadores incluidos, ideal para ferias y eventos al aire libre.",
   },
@@ -82,7 +95,11 @@ export const atracciones: Atraccion[] = [
     title: "Guerrero Ninja",
     category: "Guerrero Ninja",
     dimensions: "Instalación modular",
-    image: [],
+    image: [
+      "/imagenes/5_Atracciones/Guerrero Ninja/guerrero-ninja-1.webp",
+      "/imagenes/5_Atracciones/Guerrero Ninja/guerrero-ninja-2.webp",
+      "/imagenes/5_Atracciones/Guerrero Ninja/guerrero-ninja-3.webp",
+    ],
     description:
       "Circuito de obstáculos estilo Guerrero Ninja con puentes colgantes, barras y plataformas. Alto impacto para eventos y festivales deportivos.",
   },
@@ -90,7 +107,9 @@ export const atracciones: Atraccion[] = [
     title: "Botes de Pedal",
     category: "Botes de Pedal",
     dimensions: "2-4 pasajeros",
-    image: [],
+    image: [
+      "/imagenes/5_Atracciones/Botes de pedal/bote-de-pedal-1.webp",
+    ],
     description:
       "Botes de pedal para actividades acuáticas recreativas en piscinas, lagos y zonas de agua en eventos y festivales.",
   },
@@ -98,8 +117,27 @@ export const atracciones: Atraccion[] = [
     title: "Play Drump",
     category: "Play Drump",
     dimensions: "Estándar",
-    image: [],
+    image: [
+      "/imagenes/5_Atracciones/Play drump/play-drump-1.webp",
+      "/imagenes/5_Atracciones/Play drump/play-drump-2.webp",
+    ],
     description:
       "Área de juegos interactivos y estimulación temprana para los más pequeños. Ideal para zonas infantiles en eventos familiares y corporativos.",
+  },
+  {
+    title: "Inflables",
+    category: "Inflables",
+    dimensions: "Varios tamaños",
+    image: [
+      "/imagenes/5_Atracciones/Inflables/inflable-2.webp",
+      "/imagenes/5_Atracciones/Inflables/inflable-1.webp",
+      "/imagenes/5_Atracciones/Inflables/inflable-3.webp",
+      "/imagenes/5_Atracciones/Inflables/inflable-4.webp",
+      "/imagenes/5_Atracciones/Inflables/inflable-5.webp",
+      "/imagenes/5_Atracciones/Inflables/inflable-6.webp",
+      "/imagenes/5_Atracciones/Inflables/inflable-7.webp",
+    ],
+    description:
+      "Castillos inflables, rodaderos y pistas de obstáculos para niños. Diversión garantizada con máxima seguridad para eventos infantiles.",
   },
 ];

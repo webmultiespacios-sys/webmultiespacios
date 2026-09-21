@@ -1,5 +1,5 @@
 import { IconType } from "react-icons";
-import { FiGrid, FiHexagon, FiTriangle, FiMaximize, FiCloud } from "react-icons/fi";
+import { FiGrid, FiHexagon, FiTriangle, FiMaximize } from "react-icons/fi";
 
 export interface Category {
   label: string;
