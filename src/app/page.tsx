@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FiAward,
   FiMapPin,
@@ -30,6 +30,16 @@ const fadeInUp = {
     transition: { delay: i * 0.1, duration: 0.6, ease: [0, 0, 0.2, 1] as const },
   }),
 };
+
+const heroImages = [
+  "/imagenes/2_Estructuras_y_tarimas/Tarimas/Tarima Americana/tarima-americana.webp",
+  "/imagenes/1_carpas/Carpa polo/carpa-polo.webp",
+  "/imagenes/3_Mobiliario/Camerinos/camerino-4.webp",
+  "/imagenes/4 Ferias y Stands/Más tipos de Stands/stand-geometric.webp",
+  "/imagenes/5_Atracciones/Carros chocones/carro-chocon-1.webp",
+  "/imagenes/6_Produccion_de_eventos/Ferias y Eventos Regionales/feria-regional-7.webp",
+  "/imagenes/7_Campamentos y Bodegas/Campamento/campamento-7.webp"
+];
 
 const stats = [
   { icon: FiAward, value: "35+", label: "Años de experiencia" },
@@ -199,6 +209,16 @@ export default function HomePage() {
   const [startCount, setStartCount] = useState(false);
   const [showOtherStats, setShowOtherStats] = useState(false);
   const [activeTab, setActiveTab] = useState<"alquiler" | "sociedad" | "compra">("alquiler");
+  const [heroIndex, setHeroIndex] = useState(0);
+  const [isHeroHovered, setIsHeroHovered] = useState(false);
+
+  useEffect(() => {
+    if (isHeroHovered) return; // Pausa el carrusel si el usuario tiene el mouse encima
+    const interval = setInterval(() => {
+      setHeroIndex((prev) => (prev === heroImages.length - 1 ? 0 : prev + 1));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [isHeroHovered]);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -270,72 +290,123 @@ export default function HomePage() {
   return (
     <>
       {/* ============ HERO SECTION ============ */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-brand-blue">
-        {/* Background Image with Parallax */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div 
-            style={{ transform: `translate3d(0, ${y}px, 0)` }} 
-            className="absolute -top-[15%] inset-x-0 w-full h-[130%]"
-          >
-            <Image
-              src="/imagenes/Hero/GSP-3.webp"
-              alt="Evento Multiespacios"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/85 via-brand-blue/60 to-brand-blue/25" />
+      <section className="relative min-h-[85vh] lg:min-h-[80vh] flex items-center overflow-hidden bg-brand-blue pt-32 pb-44 lg:pt-40 lg:pb-44">
+        {/* Abstract Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[70%] rounded-full bg-brand-blue-light/20 blur-[120px]" />
+          <div className="absolute top-[40%] -right-[10%] w-[40%] h-[60%] rounded-full bg-brand-accent/10 blur-[100px]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-blue via-brand-blue/95 to-brand-blue/80" />
         </div>
 
         {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-6 pt-40 pb-44 w-full">
-          <div className="max-w-2xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15, duration: 0.6 }}
-              onAnimationComplete={() => setStartCount(true)}
-              className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.1] mb-6"
-            >
-              Soluciones integrales para{" "}
-              <span className="text-brand-accent-light">eventos corporativos</span>{" "}
-              y sociales
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-lg text-white/75 leading-relaxed mb-10 max-w-xl"
-            >
-              Diseño de stands, alquiler de carpas, mobiliario y producción de
-              eventos empresariales. Experiencias que inspiran desde 1990.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <a
-                href="https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25 hover:-translate-y-0.5"
+        <div className="relative max-w-7xl mx-auto px-6 w-full z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            
+            {/* Left Column: Text & CTA */}
+            <div className="lg:col-span-6 xl:col-span-5 flex flex-col justify-center">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15, duration: 0.6 }}
+                onAnimationComplete={() => setStartCount(true)}
+                className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.1] mb-6"
               >
-                <FaWhatsapp className="w-5 h-5" />
-                Cotizar por WhatsApp
-              </a>
-              <Link
-                href="/stands"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full text-base font-semibold border border-white/20 transition-all hover:-translate-y-0.5"
+                Soluciones integrales para{" "}
+                <span className="text-brand-accent-light">eventos corporativos</span>{" "}
+                y sociales
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="text-lg text-white/75 leading-relaxed mb-10 max-w-lg"
               >
-                Ver servicios
-                <FiArrowRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
+                Diseño de stands, alquiler de carpas, mobiliario y producción de
+                eventos empresariales. Experiencias que inspiran desde 1990.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.45, duration: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <a
+                  href="https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25 hover:-translate-y-0.5"
+                >
+                  <FaWhatsapp className="w-5 h-5" />
+                  Cotizar por WhatsApp
+                </a>
+                <Link
+                  href="/stands"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full text-base font-semibold border border-white/20 transition-all hover:-translate-y-0.5"
+                >
+                  Ver servicios
+                  <FiArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            </div>
+
+            {/* Right Column: Dynamic Carousel */}
+            <div className="lg:col-span-6 xl:col-span-7 relative h-[400px] sm:h-[450px] lg:h-[550px] w-full mt-8 lg:mt-0 flex items-center justify-center lg:justify-end perspective-1000">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                className="relative w-full max-w-[600px] h-full"
+              >
+                {/* Floating Glassmorphism Backing */}
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-3xl rounded-3xl transform rotate-2 scale-95 border border-white/10 shadow-2xl" />
+                <div className="absolute inset-0 bg-brand-blue-light/10 backdrop-blur-2xl rounded-3xl transform -rotate-1 scale-[0.98] border border-white/5 shadow-2xl" />
+
+                {/* Main Carousel Container */}
+                <div 
+                  className="absolute inset-0 bg-brand-light/90 rounded-3xl overflow-hidden border border-white/20 shadow-2xl"
+                  onMouseEnter={() => setIsHeroHovered(true)}
+                  onMouseLeave={() => setIsHeroHovered(false)}
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={heroIndex}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 1 }}
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        src={heroImages[heroIndex]}
+                        alt={`Hero image ${heroIndex + 1}`}
+                        fill
+                        className="object-cover"
+                        priority={heroIndex === 0}
+                      />
+                      {/* Subte Gradient overlay for text readability if needed */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                    </motion.div>
+                  </AnimatePresence>
+                  
+                  {/* Indicators */}
+                  <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2.5 z-20">
+                    {heroImages.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setHeroIndex(idx)}
+                        className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                          heroIndex === idx ? "bg-white scale-125 shadow-[0_0_8px_rgba(255,255,255,0.8)]" : "bg-white/40 hover:bg-white/70"
+                        }`}
+                        aria-label={`Ir a imagen ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
           </div>
         </div>
 
