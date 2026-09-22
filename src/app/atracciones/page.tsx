@@ -310,15 +310,27 @@ export default function AtraccionesPage() {
                         </p>
                       </div>
                       <div className="flex items-center justify-between pt-3 border-t border-brand-light/50">
-                        <a
-                          href={`https://wa.me/573178394478?text=${encodeURIComponent(whatsappText)}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
-                        >
-                          <FaWhatsapp className="w-4 h-4" />
-                          Cotizar
-                        </a>
+                        {item.title === "Toboganes" || item.title === "Tobogán Arcoíris" ? (
+                          <a
+                            href="https://www.toboganarcoiris.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:text-brand-blue/90 transition-colors"
+                          >
+                            Visitar página
+                            <FiArrowRight className="w-4 h-4" />
+                          </a>
+                        ) : (
+                          <a
+                            href={`https://wa.me/573178394478?text=${encodeURIComponent(whatsappText)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
+                          >
+                            <FaWhatsapp className="w-4 h-4" />
+                            Cotizar
+                          </a>
+                        )}
                         {(Array.isArray(item.image) && item.image.length > 0) && (
                           <button
                             onClick={handleOpenLightbox}

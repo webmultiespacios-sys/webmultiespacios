@@ -773,21 +773,13 @@ export default function HomePage() {
 
               {/* Dynamic CTA */}
               <a
-                href={
-                  activeTab === "alquiler"
-                    ? "https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20me%20interesa%20cotizar%20el%20ALQUILER%20del%20Tobogán%20Arcoíris%20para%20un%20evento."
-                    : activeTab === "sociedad"
-                    ? "https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20me%20interesa%20proponer%20una%20ALIANZA%20COMERCIAL%20o%20SOCIEDAD%20para%20el%20Tobogán%20Arcoíris."
-                    : "https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20quiero%20recibir%20información%20sobre%20la%20COMPRA%20del%20Tobogán%20Arcoíris."
-                }
+                href="https://www.toboganarcoiris.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25"
+                className="inline-flex items-center gap-3 bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-blue/25"
               >
-                <FaWhatsapp className="w-5 h-5" />
-                {activeTab === "alquiler" && "Cotizar Alquiler"}
-                {activeTab === "sociedad" && "Proponer Alianza"}
-                {activeTab === "compra" && "Solicitar Información"}
+                Conoce más del Tobogán
+                <FiArrowRight className="w-5 h-5" />
               </a>
             </motion.div>
           </div>
