@@ -390,7 +390,7 @@ export default function ProduccionPage() {
               viewport={{ once: true }}
               className="flex justify-center"
             >
-              <div className="relative w-full max-w-[320px] aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 bg-black">
+              <div className="relative w-full max-w-[220px] md:max-w-[260px] aspect-[9/16] rounded-[2rem] overflow-hidden shadow-2xl border-[6px] border-white/10 bg-black">
                 <iframe
                   width="100%"
                   height="100%"

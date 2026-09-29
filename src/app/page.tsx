@@ -618,8 +618,8 @@ export default function HomePage() {
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
               {/* Video Half */}
-              <div className="relative h-[400px] lg:h-[500px] w-full flex items-center justify-center p-6 bg-gray-50/50">
-                <div className="relative w-full max-w-[280px] md:max-w-[320px] aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl border-8 border-gray-900 bg-black">
+              <div className="relative h-[400px] lg:h-[500px] w-full flex items-center justify-center p-4 bg-gray-50/50">
+                <div className="relative w-full max-w-[220px] md:max-w-[260px] aspect-[9/16] rounded-[2rem] overflow-hidden shadow-2xl border-[6px] border-gray-900 bg-black">
                   <iframe
                     width="100%"
                     height="100%"
