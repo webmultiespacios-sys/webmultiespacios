@@ -19,7 +19,6 @@ const navRow1 = [
 const navRow2 = [
   { label: "Atracciones", href: "/atracciones" },
   { label: "Producción Eventos", href: "/produccion" },
-  { label: "Campamentos y Bodegas", href: "/campamentos" },
 ];
 
 const allNavLinks = [...navRow1, ...navRow2];

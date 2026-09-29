@@ -19,7 +19,7 @@ import {
   FiPhone,
   FiMail,
 } from "react-icons/fi";
-import { FaWhatsapp, FaCampground, FaChair, FaCubes, FaLayerGroup, FaVideo, FaWarehouse } from "react-icons/fa";
+import { FaWhatsapp, FaCampground, FaChair, FaCubes, FaLayerGroup, FaVideo } from "react-icons/fa";
 import { SearchTriggerButton } from "@/components/SearchTriggerButton";
 
 const fadeInUp = {
@@ -38,7 +38,6 @@ const heroImages = [
   "/imagenes/4 Ferias y Stands/Más tipos de Stands/stand-geometric.webp",
   "/imagenes/5_Atracciones/Carros chocones/carro-chocon-1.webp",
   "/imagenes/6_Produccion_de_eventos/Ferias y Eventos Regionales/feria-regional-7.webp",
-  "/imagenes/7_Campamentos y Bodegas/Campamento/campamento-7.webp"
 ];
 
 const stats = [
@@ -101,15 +100,6 @@ const services = [
     image: "/imagenes/6_Produccion_de_eventos/Ferias y Eventos Regionales/feria-regional-7.webp",
     href: "/produccion",
     color: "from-indigo-600 to-indigo-800",
-  },
-  {
-    icon: FaWarehouse,
-    title: "Campamentos y Bodegas",
-    description:
-      "Instalaciones temporales para operaciones en campo: campamentos, hangares industriales y pabellones de gran escala.",
-    image: "/imagenes/7_Campamentos y Bodegas/Campamento/campamento-7.webp",
-    href: "/campamentos",
-    color: "from-stone-600 to-stone-800",
   },
 ];
 
@@ -628,12 +618,12 @@ export default function HomePage() {
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
               {/* Video Half */}
-              <div className="relative h-[400px] lg:h-full lg:min-h-[450px] w-full bg-black flex items-center justify-center p-4">
-                <div className="relative w-full max-w-[280px] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative h-[400px] lg:h-[500px] w-full flex items-center justify-center p-6 bg-gray-50/50">
+                <div className="relative w-full max-w-[280px] md:max-w-[320px] aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl border-8 border-gray-900 bg-black">
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/JkB6ksN-ktE?autoplay=1&mute=1&loop=1&playlist=JkB6ksN-ktE&controls=1&rel=0&modestbranding=1"
+                    src="https://www.youtube.com/embed/ERirPHh_TF8?autoplay=1&mute=1&loop=1&playlist=ERirPHh_TF8&controls=1&rel=0&modestbranding=1"
                     title="Producción de Eventos - Multiespacios"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

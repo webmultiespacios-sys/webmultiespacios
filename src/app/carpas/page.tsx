@@ -151,11 +151,13 @@ export default function CarpasPage() {
                 />
                 
                 {/* Lightbox Product Name Badge */}
+                {!selectedItem.images[selectedItem.index].includes("ficha_tecnica") && (
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
                   <span className="bg-brand-blue text-white text-sm md:text-base font-extrabold px-6 py-3.5 rounded-xl shadow-2xl border border-white/20 tracking-wider whitespace-nowrap">
                     {getProductNameFromUrl(selectedItem.images[selectedItem.index])}
                   </span>
                 </div>
+                )}
               </div>
 
               {/* Carousel Controls (only if multiple images) */}
@@ -269,6 +271,12 @@ export default function CarpasPage() {
                   setSelectedItem({ images: [stand.image], index: 0 });
                 }
               };
+
+              const handleOpenFichaTecnica = () => {
+                if (Array.isArray(stand.image)) {
+                  setSelectedItem({ images: stand.image, index: stand.image.length - 1 });
+                }
+              };
               
               const firstImage = Array.isArray(stand.image) ? stand.image[0] : stand.image;
               const whatsappText = `Hola Multiespacios, me interesa cotizar la carpa: ${stand.title}.\n\nReferencia: https://www.multiespacios.com.co${firstImage || ""}`;
@@ -344,10 +352,10 @@ export default function CarpasPage() {
                         </a>
                         {(Array.isArray(stand.image) && stand.image.length > 0) ? (
                           <button
-                            onClick={handleOpenLightbox}
+                            onClick={handleOpenFichaTecnica}
                             className="text-brand-accent text-sm font-semibold flex items-center gap-1 group-hover:gap-1.5 transition-all cursor-pointer"
                           >
-                            Detalles
+                            Ficha técnica
                             <FiArrowRight className="w-3.5 h-3.5" />
                           </button>
                         ) : (

@@ -35,12 +35,12 @@ export const getProductNameFromUrl = (url: string): string => {
 const staticSections: SearchItem[] = [
   {
     id: "sec-carpas",
-    title: "Alquiler de Carpas y Pabellones",
+    title: "Alquiler de Carpas, Campamentos y Pabellones",
     category: "Sección",
-    description: "Carpas Pagoda, Polos, y Pabellones modulares para eventos.",
+    description: "Carpas Pagoda, Polos, Pabellones modulares, Campamentos, Hangares industriales y Pabellones de gran escala.",
     image: "/imagenes/1_carpas/Carpa pagoda/carpa-pagoda.webp",
     url: "/carpas",
-    keywords: ["carpa", "toldo", "cubierta", "pabellon", "techo", "evento"],
+    keywords: ["carpa", "toldo", "cubierta", "pabellon", "techo", "evento", "campamento", "bodega", "hangar", "obra", "mineria", "construccion", "temporal"],
   },
   {
     id: "sec-estructuras",
@@ -93,14 +93,6 @@ const staticSections: SearchItem[] = [
     description: "Producción integral de eventos corporativos, gubernamentales, ferias regionales y universitarios.",
     url: "/produccion",
     keywords: ["produccion", "evento", "corporativo", "gubernamental", "feria", "universidad", "marca"],
-  },
-  {
-    id: "sec-campamentos",
-    title: "Campamentos y Bodegas",
-    category: "Sección",
-    description: "Campamentos temporales, hangares industriales y pabellones de gran escala para proyectos en campo.",
-    url: "/campamentos",
-    keywords: ["campamento", "bodega", "hangar", "pabellon", "obra", "mineria", "construccion", "temporal"],
   },
 ];
 
