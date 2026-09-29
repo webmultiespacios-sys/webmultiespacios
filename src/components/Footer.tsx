@@ -48,36 +48,40 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-3">
               <a
-                href="https://www.instagram.com/multiespaciossas/"
+                href="https://www.instagram.com/abcmultiespacios/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:scale-110 hover:shadow-lg hover:shadow-brand-accent/30 transition-all duration-300"
                 aria-label="Instagram"
               >
-                <FiInstagram className="w-4.5 h-4.5" />
+                <FiInstagram className="w-5 h-5" />
               </a>
               <a
-                href="https://www.facebook.com/multiespaciossas/"
+                href="https://www.facebook.com/abcmultiespacios"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:scale-110 hover:shadow-lg hover:shadow-brand-accent/30 transition-all duration-300"
                 aria-label="Facebook"
               >
-                <FiFacebook className="w-4.5 h-4.5" />
+                <FiFacebook className="w-5 h-5" />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label="YouTube"
-              >
-                <FaYoutube className="w-4.5 h-4.5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                href="https://www.tiktok.com/@multiespaciosltda"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:scale-110 hover:shadow-lg hover:shadow-brand-accent/30 transition-all duration-300"
                 aria-label="TikTok"
               >
-                <FaTiktok className="w-4 h-4" />
+                <FaTiktok className="w-4.5 h-4.5" />
+              </a>
+              <a
+                href="https://www.youtube.com/@MultiespaciosSAS"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-accent hover:scale-110 hover:shadow-lg hover:shadow-brand-accent/30 transition-all duration-300"
+                aria-label="YouTube"
+              >
+                <FaYoutube className="w-5 h-5" />
               </a>
             </div>
           </div>
