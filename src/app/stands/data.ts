@@ -37,7 +37,7 @@ export const stands: Stand[] = [
   {
     title: "Stands en Panelería",
     category: "Panelería",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/4 Ferias y Stands/Panelería/panel-tradicional.webp"
     ],
@@ -47,7 +47,7 @@ export const stands: Stand[] = [
   {
     title: "Stands en Sistema Octanorm",
     category: "Octanorm",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/4 Ferias y Stands/Octanorm/octanorm.webp",
       "/imagenes/4 Ferias y Stands/Octanorm/stand-octanorm.webp"
@@ -58,7 +58,7 @@ export const stands: Stand[] = [
   {
     title: "Stands tipo Scaffold",
     category: "Scaffold",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/4 Ferias y Stands/Scaffold/estructura-scaffold.webp",
       "/imagenes/4 Ferias y Stands/Scaffold/estructuras-scaffold.webp"
@@ -69,7 +69,7 @@ export const stands: Stand[] = [
   {
     title: "Stands y Techos en Trimalla",
     category: "Trimalla",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/4 Ferias y Stands/Trimalla/techo-con-truss-y-trimalla.webp",
       "/imagenes/4 Ferias y Stands/Trimalla/techo-con-truss-y-trimalla-2.webp",
@@ -81,7 +81,7 @@ export const stands: Stand[] = [
   {
     title: "Backings Publicitarios",
     category: "Backing",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/4 Ferias y Stands/Backing/backing-1.webp",
       "/imagenes/4 Ferias y Stands/Backing/backing-2.webp",
@@ -96,7 +96,7 @@ export const stands: Stand[] = [
   {
     title: "Otros Tipos de Stands",
     category: "Más tipos de Stands",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/4 Ferias y Stands/Más tipos de Stands/stand-piso-vidrio-iluminado.webp",
       "/imagenes/4 Ferias y Stands/Más tipos de Stands/carpa-tradicional.webp",

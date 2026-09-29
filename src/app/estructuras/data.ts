@@ -27,7 +27,7 @@ export const stands: Stand[] = [
   {
     title: "Tarima tipo Americana",
     category: "Tarimas",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Tarimas/Tarima Americana/tarima-americana.webp",
       "/imagenes/2_Estructuras_y_tarimas/Tarimas/Tarima Americana/tarima-certificada.webp"
@@ -37,7 +37,7 @@ export const stands: Stand[] = [
   {
     title: "Tarima en Vidrio",
     category: "Tarimas",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Tarimas/Tarima Vidrio/tarima-vidrio.webp",
       "/imagenes/2_Estructuras_y_tarimas/Tarimas/Tarima Vidrio/tarima-vidrio-2.webp"
@@ -47,7 +47,7 @@ export const stands: Stand[] = [
   {
     title: "Tarima Tradicional",
     category: "Tarimas",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Tarimas/Tarima Tradicional/tarima-tradicional.webp",
       "/imagenes/2_Estructuras_y_tarimas/Tarimas/Tarima Tradicional/tarima-tradicional-2.webp",
@@ -59,7 +59,7 @@ export const stands: Stand[] = [
   {
     title: "Tarima tipo Scaffold",
     category: "Tarimas",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Tarimas/Tarima tipo Scaffold/tarima-scaffold.webp",
       "/imagenes/2_Estructuras_y_tarimas/Tarimas/Tarima tipo Scaffold/tarima-scaffold-2.webp",
@@ -70,7 +70,7 @@ export const stands: Stand[] = [
   {
     title: "Pisos de Tarimas",
     category: "Tarimas",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Tarimas/Pisos de Tarimas/piso-tarima-diseno.webp",
       "/imagenes/2_Estructuras_y_tarimas/Tarimas/Pisos de Tarimas/piso-tarima-madera.webp",
@@ -87,7 +87,7 @@ export const stands: Stand[] = [
   {
     title: "Otros tipos de Tarima",
     category: "Tarimas",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Tarimas/Otros Tipos de Tarima/tarima-normal.webp",
       "/imagenes/2_Estructuras_y_tarimas/Tarimas/Otros Tipos de Tarima/tarima-espejo.webp",
@@ -103,7 +103,7 @@ export const stands: Stand[] = [
   {
     title: "Estructura Truss",
     category: "Estructuras",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Truss/Truss-eventos.webp",
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Truss/Truss-eventos-2.webp",
@@ -118,7 +118,7 @@ export const stands: Stand[] = [
   {
     title: "Estructura Scaffold",
     category: "Estructuras",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Scaffold/estructura-scaffold.webp"
     ],
@@ -127,7 +127,7 @@ export const stands: Stand[] = [
   {
     title: "Estructura Octanorm",
     category: "Estructuras",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Octanorm/estructura-octanorm.webp",
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Estructura Octanorm/estructura-octanorm-2.webp",
@@ -138,7 +138,7 @@ export const stands: Stand[] = [
   {
     title: "Graderías",
     category: "Estructuras",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Graderias/graderia-escalonada.webp",
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Graderias/estructuras-graderias-1.webp",
@@ -150,7 +150,7 @@ export const stands: Stand[] = [
   {
     title: "Muro de escalar",
     category: "Estructuras",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Muro de Escalar/Muro-de-escalar.webp",
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Muro de Escalar/Muro-de-escalar-2.webp",
@@ -161,14 +161,14 @@ export const stands: Stand[] = [
   {
     title: "Rampas",
     category: "Estructuras",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: placeholderImg,
     description: "Accesos seguros e inclusivos, así como pasarelas dinámicas para conexión de espacios o exhibiciones de vehículos.",
   },
   {
     title: "Pórtico",
     category: "Estructuras",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Portico/portico-truss.webp",
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Portico/portico-scaffold.webp"
@@ -178,7 +178,7 @@ export const stands: Stand[] = [
   {
     title: "Pipe Drape (Cortina)",
     category: "Estructuras",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Pipe Drape (Cortina)/pipe-drape.webp",
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Pipe Drape (Cortina)/pipe-drape-estructura.webp"

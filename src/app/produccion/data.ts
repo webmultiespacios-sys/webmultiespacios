@@ -26,7 +26,7 @@ export const producciones: Produccion[] = [
   {
     title: "Evento con Marcas",
     category: "Evento con Marcas",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/6_Produccion_de_eventos/Evento con marcas/evento-marca-3.webp",
       "/imagenes/6_Produccion_de_eventos/Evento con marcas/evento-marca-1.webp",
@@ -43,7 +43,7 @@ export const producciones: Produccion[] = [
   {
     title: "Eventos Gubernamentales",
     category: "Eventos Gubernamentales",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/6_Produccion_de_eventos/Eventos Gubernamentales/evento-gubernamental-1.webp",
       "/imagenes/6_Produccion_de_eventos/Eventos Gubernamentales/evento-gubernamental-2.webp",
@@ -56,7 +56,7 @@ export const producciones: Produccion[] = [
   {
     title: "Ferias y Eventos Regionales",
     category: "Ferias y Eventos Regionales",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/6_Produccion_de_eventos/Ferias y Eventos Regionales/feria-regional-4.webp",
       "/imagenes/6_Produccion_de_eventos/Ferias y Eventos Regionales/feria-regional-1.webp",
@@ -73,7 +73,7 @@ export const producciones: Produccion[] = [
   {
     title: "Universidades",
     category: "Universidades",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/6_Produccion_de_eventos/Universidades/universidad-1.webp",
       "/imagenes/6_Produccion_de_eventos/Universidades/universidad-2.webp",

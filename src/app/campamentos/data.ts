@@ -25,7 +25,7 @@ export const campamentos: Campamento[] = [
   {
     title: "Campamentos",
     category: "Campamentos",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/7_Campamentos y Bodegas/Campamento/campamento-1.webp",
       "/imagenes/7_Campamentos y Bodegas/Campamento/campamento-2.webp",
@@ -56,7 +56,7 @@ export const campamentos: Campamento[] = [
   {
     title: "Pabellones",
     category: "Pabellones",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/7_Campamentos y Bodegas/Pabellones/pabellon-1.webp",
       "/imagenes/7_Campamentos y Bodegas/Pabellones/pabellon-2.webp",

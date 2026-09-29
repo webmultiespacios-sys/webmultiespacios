@@ -25,7 +25,7 @@ export const stands: Stand[] = [
   {
     title: "Carpa Pagoda",
     category: "Pagodas",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/1_carpas/Carpa pagoda/carpa-pagoda.webp",
       "/imagenes/1_carpas/Carpa pagoda/carpa-pagoda-colores.webp",
@@ -36,7 +36,7 @@ export const stands: Stand[] = [
   {
     title: "Carpa Polo",
     category: "Polos",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/1_carpas/Carpa polo/carpa-polo.webp",
       "/imagenes/1_carpas/Carpa polo/carpa-polo-2.webp"
@@ -46,7 +46,7 @@ export const stands: Stand[] = [
   {
     title: "Carpa Pabellón",
     category: "Pabellones",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/1_carpas/Carpa pabellon/carpa-pabellón.webp",
       "/imagenes/1_carpas/Carpa pabellon/carpa-pabellon-3x3.webp",

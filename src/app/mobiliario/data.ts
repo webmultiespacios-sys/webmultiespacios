@@ -58,7 +58,7 @@ export const stands: Stand[] = [
   {
     title: "Salas Lounge",
     category: "Salas Lounge",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/3_Mobiliario/Salas Lounge/sala-lounge-1.webp",
       "/imagenes/3_Mobiliario/Salas Lounge/sala-lounge-2.webp",
@@ -74,7 +74,7 @@ export const stands: Stand[] = [
   {
     title: "Atriles",
     category: "Atriles",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/3_Mobiliario/Atriles/atril-1.webp",
       "/imagenes/3_Mobiliario/Atriles/atril-2.webp",
@@ -86,7 +86,7 @@ export const stands: Stand[] = [
   {
     title: "Pisos y Alfombras",
     category: "Pisos",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/3_Mobiliario/Alfombras/alfombra-13.webp",
       "/imagenes/3_Mobiliario/Pisos/piso-1.webp",
@@ -157,7 +157,7 @@ export const stands: Stand[] = [
   {
     title: "Mobiliario para Camerinos",
     category: "Camerinos",
-    dimensions: "Personalizable",
+    dimensions: "",
     image: [
       "/imagenes/3_Mobiliario/Camerinos/camerino-4.webp",
       "/imagenes/3_Mobiliario/Camerinos/camerino-1.webp",

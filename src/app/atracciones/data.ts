@@ -10,7 +10,6 @@ import {
   FiAnchor,
   FiDroplet,
   FiBox,
-  FiCloud,
 } from "react-icons/fi";
 
 export interface Category {
@@ -36,7 +35,6 @@ export const categories: Category[] = [
   { label: "Guerrero Ninja", icon: FiAnchor },
   { label: "Botes de Pedal", icon: FiDroplet },
   { label: "Play Drump", icon: FiBox },
-  { label: "Inflables", icon: FiCloud },
 ];
 
 export const atracciones: Atraccion[] = [
@@ -84,7 +82,7 @@ export const atracciones: Atraccion[] = [
   {
     title: "Cuatri Motos",
     category: "Cuatri Motos",
-    dimensions: "Circuito personalizable",
+    dimensions: "",
     image: [
       "/imagenes/5_Atracciones/Cuatri Motos/cuatrimoto-1.webp",
     ],
@@ -123,21 +121,5 @@ export const atracciones: Atraccion[] = [
     ],
     description:
       "Área de juegos interactivos y estimulación temprana para los más pequeños. Ideal para zonas infantiles en eventos familiares y corporativos.",
-  },
-  {
-    title: "Inflables",
-    category: "Inflables",
-    dimensions: "Varios tamaños",
-    image: [
-      "/imagenes/5_Atracciones/Inflables/inflable-2.webp",
-      "/imagenes/5_Atracciones/Inflables/inflable-1.webp",
-      "/imagenes/5_Atracciones/Inflables/inflable-3.webp",
-      "/imagenes/5_Atracciones/Inflables/inflable-4.webp",
-      "/imagenes/5_Atracciones/Inflables/inflable-5.webp",
-      "/imagenes/5_Atracciones/Inflables/inflable-6.webp",
-      "/imagenes/5_Atracciones/Inflables/inflable-7.webp",
-    ],
-    description:
-      "Castillos inflables, rodaderos y pistas de obstáculos para niños. Diversión garantizada con máxima seguridad para eventos infantiles.",
   },
 ];
