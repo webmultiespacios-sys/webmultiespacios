@@ -102,9 +102,10 @@ export function Navbar() {
             <button
               onClick={openSearchModal}
               aria-label="Abrir buscador"
-              className="ml-1 p-2.5 rounded-full text-white hover:scale-110 transition-all duration-300"
-              style={{ filter: "drop-shadow(0 0 6px rgba(255,255,255,0.55))" }}
+              className="ml-4 flex items-center gap-2.5 px-5 py-2.5 rounded-full text-brand-accent hover:bg-brand-accent/10 hover:scale-105 transition-all duration-300"
+              style={{ filter: "drop-shadow(0 0 4px rgba(255,255,255,0.2))" }}
             >
+              <span className="text-lg lg:text-xl font-bold tracking-wide">¿Y tú qué necesitas?</span>
               <FiSearch className="w-5 h-5" />
             </button>
           </div>
