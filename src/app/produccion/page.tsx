@@ -399,7 +399,7 @@ export default function ProduccionPage() {
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
-                  className="absolute inset-0"
+                  className="absolute inset-0 w-full h-full scale-[3.16] pointer-events-none"
                 ></iframe>
               </div>
             </motion.div>
