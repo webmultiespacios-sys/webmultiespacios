@@ -628,7 +628,7 @@ export default function HomePage() {
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                    className="absolute inset-0 w-full h-full scale-[3.16] pointer-events-none"
+                    className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[316%] h-full pointer-events-none"
                   ></iframe>
                 </div>
               </div>
