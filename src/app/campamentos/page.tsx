@@ -311,7 +311,7 @@ export default function CampamentosPage() {
                       </div>
                       <div className="flex items-center justify-between pt-3 border-t border-brand-light/50">
                         <a
-                          href={`https://wa.me/573178394478?text=${encodeURIComponent(whatsappText)}`}
+                          href={`https://wa.me/573125575477?text=${encodeURIComponent(whatsappText)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
@@ -363,7 +363,7 @@ export default function CampamentosPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20necesito%20cotizar%20campamentos%20o%20bodegas"
+                href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20necesito%20cotizar%20campamentos%20o%20bodegas"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25"
@@ -372,7 +372,7 @@ export default function CampamentosPage() {
                 Cotizar ahora
               </a>
               <a
-                href="tel:+573178394478"
+                href="tel:+573125575477"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full text-base font-semibold border border-white/20 transition-all"
               >
                 Hablar con un asesor
@@ -438,7 +438,7 @@ export default function CampamentosPage() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-brand-dark/80 uppercase tracking-wider mb-1">Teléfono y WhatsApp</h4>
-                    <p className="text-brand-dark/70 text-base md:text-lg">317 839 44 78 – 313 882 31 64</p>
+                    <p className="text-brand-dark/70 text-base md:text-lg">312 557 54 77 – 313 800 43 23</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">

@@ -72,9 +72,8 @@ function StandImageCarousel({ images, alt, onImageClick }: { images: string[]; a
             {images.map((_, idx) => (
               <div
                 key={idx}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  currentIndex === idx ? "bg-white scale-125" : "bg-white/50"
-                }`}
+                className={`w-2 h-2 rounded-full transition-all ${currentIndex === idx ? "bg-white scale-125" : "bg-white/50"
+                  }`}
               />
             ))}
           </div>
@@ -126,13 +125,13 @@ export default function CarpasPage() {
             onClick={() => setSelectedItem(null)}
           >
             {/* Close Button */}
-            <button 
+            <button
               className="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 rounded-full p-3 transition-all z-[60]"
               onClick={() => setSelectedItem(null)}
             >
               <FiX className="w-6 h-6 md:w-8 md:h-8" />
             </button>
-            
+
             {/* Main Image Container */}
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
@@ -149,14 +148,14 @@ export default function CarpasPage() {
                   className="object-contain"
                   quality={100}
                 />
-                
+
                 {/* Lightbox Product Name Badge */}
                 {!selectedItem.images[selectedItem.index].includes("ficha_tecnica") && (
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
-                  <span className="bg-brand-blue text-white text-sm md:text-base font-extrabold px-6 py-3.5 rounded-xl shadow-2xl border border-white/20 tracking-wider whitespace-nowrap">
-                    {getProductNameFromUrl(selectedItem.images[selectedItem.index])}
-                  </span>
-                </div>
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
+                    <span className="bg-brand-blue text-white text-sm md:text-base font-extrabold px-6 py-3.5 rounded-xl shadow-2xl border border-white/20 tracking-wider whitespace-nowrap">
+                      {getProductNameFromUrl(selectedItem.images[selectedItem.index])}
+                    </span>
+                  </div>
                 )}
               </div>
 
@@ -175,7 +174,7 @@ export default function CarpasPage() {
                   >
                     <FiChevronRight className="w-8 h-8 md:w-10 md:h-10" />
                   </button>
-                  
+
                   {/* Dots Indicator */}
                   <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-2.5 z-[60]">
                     {selectedItem.images.map((_, idx) => (
@@ -185,9 +184,8 @@ export default function CarpasPage() {
                           e.stopPropagation();
                           setSelectedItem({ ...selectedItem, index: idx });
                         }}
-                        className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all ${
-                          selectedItem.index === idx ? "bg-white scale-125" : "bg-white/40 hover:bg-white/70"
-                        }`}
+                        className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all ${selectedItem.index === idx ? "bg-white scale-125" : "bg-white/40 hover:bg-white/70"
+                          }`}
                       />
                     ))}
                   </div>
@@ -237,11 +235,10 @@ export default function CarpasPage() {
               <button
                 key={cat.label}
                 onClick={() => setActiveCategory(cat.label)}
-                className={`flex items-center gap-2.5 px-6 py-3 rounded-full text-base font-semibold whitespace-nowrap transition-all ${
-                  activeCategory === cat.label
-                    ? "bg-brand-blue text-white shadow-md shadow-brand-blue/20"
-                    : "bg-brand-light/60 text-brand-dark/70 hover:bg-brand-light hover:text-brand-dark"
-                }`}
+                className={`flex items-center gap-2.5 px-6 py-3 rounded-full text-base font-semibold whitespace-nowrap transition-all ${activeCategory === cat.label
+                  ? "bg-brand-blue text-white shadow-md shadow-brand-blue/20"
+                  : "bg-brand-light/60 text-brand-dark/70 hover:bg-brand-light hover:text-brand-dark"
+                  }`}
               >
                 <cat.icon className="w-5 h-5" />
                 {cat.label}
@@ -257,9 +254,9 @@ export default function CarpasPage() {
       {/* ============ GALLERY ============ */}
       <section className="relative py-16 bg-white min-h-[50vh] overflow-hidden">
         {/* Fondo Decorativo Estructural */}
-        <div 
-          className="absolute inset-0 z-0 opacity-[0.6] bg-[length:350px] md:bg-[length:500px] bg-center bg-repeat" 
-          style={{ backgroundImage: "url('/imagenes/fondos/bg-structural.webp')" }} 
+        <div
+          className="absolute inset-0 z-0 opacity-[0.6] bg-[length:350px] md:bg-[length:500px] bg-center bg-repeat"
+          style={{ backgroundImage: "url('/imagenes/fondos/bg-structural.webp')" }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -274,10 +271,15 @@ export default function CarpasPage() {
 
               const handleOpenFichaTecnica = () => {
                 if (Array.isArray(stand.image)) {
-                  setSelectedItem({ images: stand.image, index: stand.image.length - 1 });
+                  const fichaIndex = stand.image.findIndex(img => img.includes("ficha-tecnica"));
+                  if (fichaIndex !== -1) {
+                    setSelectedItem({ images: stand.image, index: fichaIndex });
+                  } else {
+                    setSelectedItem({ images: stand.image, index: stand.image.length - 1 });
+                  }
                 }
               };
-              
+
               const firstImage = Array.isArray(stand.image) ? stand.image[0] : stand.image;
               const whatsappText = `Hola Multiespacios, me interesa cotizar la carpa: ${stand.title}.\n\nReferencia: https://www.multiespacios.com.co${firstImage || ""}`;
 
@@ -295,10 +297,10 @@ export default function CarpasPage() {
                     {/* Image */}
                     <div className="relative h-64 lg:h-80 xl:h-96 overflow-hidden bg-gray-100">
                       {Array.isArray(stand.image) ? (
-                        <StandImageCarousel 
-                          images={stand.image} 
-                          alt={stand.title} 
-                          onImageClick={(images, idx) => setSelectedItem({ images, index: idx })} 
+                        <StandImageCarousel
+                          images={stand.image}
+                          alt={stand.title}
+                          onImageClick={(images, idx) => setSelectedItem({ images, index: idx })}
                         />
                       ) : (
                         <div className="relative w-full h-full cursor-pointer" onClick={handleOpenLightbox}>
@@ -342,7 +344,7 @@ export default function CarpasPage() {
                       </div>
                       <div className="flex items-center justify-between pt-3 border-t border-brand-light/50">
                         <a
-                          href={`https://wa.me/573178394478?text=${encodeURIComponent(whatsappText)}`}
+                          href={`https://wa.me/573125575477?text=${encodeURIComponent(whatsappText)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
@@ -400,12 +402,12 @@ export default function CarpasPage() {
               ¿Necesitas una carpa a tu medida?
             </h2>
             <p className="text-white/70 mb-10 text-lg">
-              Diseñamos y montamos la estructura perfecta según las dimensiones y
+              Montamos la estructura perfecta según las dimensiones y
               requerimientos de tu evento. Solicita tu cotización sin compromiso.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20necesito%20una%20carpa%20para%20un%20evento"
+                href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20necesito%20una%20carpa%20para%20un%20evento"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25"
@@ -414,7 +416,7 @@ export default function CarpasPage() {
                 Cotizar ahora
               </a>
               <a
-                href="tel:+573178394478"
+                href="tel:+573125575477"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full text-base font-semibold border border-white/20 transition-all"
               >
                 Hablar con un asesor
@@ -471,7 +473,7 @@ export default function CarpasPage() {
               <h3 className="text-2xl md:text-3xl font-display font-extrabold text-brand-blue mb-8">
                 Datos de Contacto
               </h3>
-              
+
               <ul className="space-y-6 mb-10">
                 <li className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-brand-blue/5 border border-brand-blue/10 flex items-center justify-center text-brand-accent flex-shrink-0">
@@ -482,17 +484,17 @@ export default function CarpasPage() {
                     <p className="text-brand-dark/70 text-base md:text-lg">Cra 87 # 84 A – 25 , Bogotá</p>
                   </div>
                 </li>
-                
+
                 <li className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-brand-blue/5 border border-brand-blue/10 flex items-center justify-center text-brand-accent flex-shrink-0">
                     <FiPhone className="w-6 h-6" />
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-brand-dark/80 uppercase tracking-wider mb-1">Teléfono y WhatsApp</h4>
-                    <p className="text-brand-dark/70 text-base md:text-lg">317 839 44 78 – 313 882 31 64</p>
+                    <p className="text-brand-dark/70 text-base md:text-lg">312 557 54 77 – 313 800 43 23</p>
                   </div>
                 </li>
-                
+
                 <li className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-brand-blue/5 border border-brand-blue/10 flex items-center justify-center text-brand-accent flex-shrink-0">
                     <FiMail className="w-6 h-6" />

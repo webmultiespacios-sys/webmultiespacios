@@ -68,7 +68,7 @@ export const stands: Stand[] = [
     description: "Sistema modular altamente versátil que permite configuraciones complejas y alturas ajustables según las necesidades del escenario.",
   },
   {
-    title: "Pisos de Tarimas",
+    title: "Pisos",
     category: "Tarimas",
     dimensions: "",
     image: [
@@ -146,17 +146,6 @@ export const stands: Stand[] = [
       "/imagenes/2_Estructuras_y_tarimas/Estructuras/Graderias/estructuras-graderias-3.webp"
     ],
     description: "Montaje seguro y cómodo para eventos deportivos o espectáculos que requieran acomodación masiva de público.",
-  },
-  {
-    title: "Muro de escalar",
-    category: "Estructuras",
-    dimensions: "",
-    image: [
-      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Muro de Escalar/Muro-de-escalar.webp",
-      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Muro de Escalar/Muro-de-escalar-2.webp",
-      "/imagenes/2_Estructuras_y_tarimas/Estructuras/Muro de Escalar/Muro-de-escalar-3.webp"
-    ],
-    description: "Atracción deportiva segura y atractiva, montada con los más altos estándares de calidad para activaciones y ferias.",
   },
   {
     title: "Rampas",

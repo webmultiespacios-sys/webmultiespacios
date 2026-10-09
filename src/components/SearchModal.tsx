@@ -155,7 +155,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     ¿Requieres un montaje especial o personalizado? ¡Contáctanos directamente!
                   </p>
                   <a
-                    href={`https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20estoy%20buscando%20informaci%C3%B3n%20sobre%3A%20${encodeURIComponent(
+                    href={`https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20estoy%20buscando%20informaci%C3%B3n%20sobre%3A%20${encodeURIComponent(
                       query
                     )}`}
                     target="_blank"

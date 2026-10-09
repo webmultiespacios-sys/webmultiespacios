@@ -198,7 +198,6 @@ export default function HomePage() {
   const [scrollY, setScrollY] = useState(0);
   const [startCount, setStartCount] = useState(false);
   const [showOtherStats, setShowOtherStats] = useState(false);
-  const [activeTab, setActiveTab] = useState<"alquiler" | "sociedad" | "compra">("alquiler");
   const [heroIndex, setHeroIndex] = useState(0);
   const [isHeroHovered, setIsHeroHovered] = useState(false);
 
@@ -323,7 +322,7 @@ export default function HomePage() {
                 className="flex flex-col sm:flex-row gap-4"
               >
                 <a
-                  href="https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n"
+                  href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25 hover:-translate-y-0.5"
@@ -650,7 +649,7 @@ export default function HomePage() {
                 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20necesito%20Cotizar%20evento"
+                    href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20necesito%20Cotizar%20evento"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-brand-green hover:bg-brand-green-dark text-white px-7 py-3.5 rounded-full text-sm md:text-base font-semibold transition-all shadow-lg hover:shadow-brand-green/30 hover:-translate-y-0.5"
@@ -727,39 +726,6 @@ export default function HomePage() {
                 Diversión que impacta, segura y de alto flujo. Una oportunidad de negocio rentable que hace inolvidable tu evento y dinamiza tus espacios comerciales.
               </p>
 
-              {/* Segmented Control / Tabs */}
-              <div className="flex p-1 bg-brand-light/80 backdrop-blur-sm rounded-2xl border border-brand-dark/5 gap-1 mb-8 max-w-md">
-                {(["alquiler", "sociedad", "compra"] as const).map((tab) => (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`flex-1 py-2.5 px-4 text-xs md:text-sm font-semibold rounded-xl transition-all capitalize select-none cursor-pointer ${
-                      activeTab === tab
-                        ? "bg-brand-blue text-white shadow-md"
-                        : "text-brand-dark/60 hover:text-brand-dark hover:bg-brand-dark/5"
-                    }`}
-                  >
-                    {tab === "sociedad" ? "Alianzas" : tab}
-                  </button>
-                ))}
-              </div>
-
-              {/* Tab Details */}
-              <div className="min-h-[120px] mb-8">
-                <h3 className="text-lg font-bold text-brand-blue mb-2">
-                  {activeTab === "alquiler" && "Alquiler de Alto Impacto"}
-                  {activeTab === "sociedad" && "Alianza Comercial (Sociedad)"}
-                  {activeTab === "compra" && "Venta y Alta Rentabilidad"}
-                </h3>
-                <p className="text-brand-dark/60 text-sm leading-relaxed">
-                  {activeTab === "alquiler" &&
-                    "Ideal para activaciones de marca, ferias, conciertos y eventos masivos corporativos o sociales. Ofrecemos instalación rápida a nivel nacional de 1 a 3 carriles, adaptándonos tanto a terrenos planos como a pendientes naturales."}
-                  {activeTab === "sociedad" &&
-                    "Un modelo de ingresos compartidos (Revenue Share) sin necesidad de inversión en el equipo. Instalamos la atracción en tu espacio comercial de alto flujo (centro comercial, parque de diversiones) y operamos de la mano dividiendo las ganancias."}
-                  {activeTab === "compra" &&
-                    "Adquiere el Tobogán Arcoíris completo para tu parque o negocio de entretenimiento. Es un modelo altamente rentable y probado, con un retorno de inversión (ROI) estimado en menos de un año."}
-                </p>
-              </div>
 
               {/* Dynamic CTA */}
               <a
@@ -1016,7 +982,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-brand-dark/80 uppercase tracking-wider mb-1">Teléfono y WhatsApp</h4>
-                    <p className="text-brand-dark/70 text-base md:text-lg">317 839 44 78 – 313 882 31 64</p>
+                    <p className="text-brand-dark/70 text-base md:text-lg">312 557 54 77 – 313 800 43 23</p>
                   </div>
                 </li>
                 
@@ -1071,7 +1037,7 @@ export default function HomePage() {
             </p>
             <div className="flex justify-center">
               <a
-                href="https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20quiero%20cotizar%20un%20evento"
+                href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20quiero%20cotizar%20un%20evento"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25"

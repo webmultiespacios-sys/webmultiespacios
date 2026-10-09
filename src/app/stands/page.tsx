@@ -339,7 +339,7 @@ export default function StandsPage() {
                       </div>
                       <div className="flex items-center justify-between pt-3 border-t border-brand-light/50">
                         <a
-                          href={`https://wa.me/573178394478?text=${encodeURIComponent(whatsappText)}`}
+                          href={`https://wa.me/573125575477?text=${encodeURIComponent(whatsappText)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
@@ -403,7 +403,7 @@ export default function StandsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/573178394478?text=Hola%20Multiespacios%2C%20necesito%20un%20stand%20para%20una%20feria"
+                href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20necesito%20un%20stand%20para%20una%20feria"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25"
@@ -412,7 +412,7 @@ export default function StandsPage() {
                 Cotizar mi stand
               </a>
               <a
-                href="tel:+573178394478"
+                href="tel:+573125575477"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full text-base font-semibold border border-white/20 transition-all"
               >
                 Hablar con un asesor

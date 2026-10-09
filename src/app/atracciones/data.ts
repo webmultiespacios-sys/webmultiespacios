@@ -34,7 +34,7 @@ export const categories: Category[] = [
   { label: "Cuatri Motos", icon: FiStar },
   { label: "Guerrero Ninja", icon: FiAnchor },
   { label: "Botes de Pedal", icon: FiDroplet },
-  { label: "Play Drump", icon: FiBox },
+  { label: "Playgrounds", icon: FiBox },
 ];
 
 export const atracciones: Atraccion[] = [
@@ -65,6 +65,8 @@ export const atracciones: Atraccion[] = [
     image: [
       "/imagenes/5_Atracciones/Muro de Escalar/muro-de-escalar-1.webp",
       "/imagenes/5_Atracciones/Muro de Escalar/muro-de-escalar-2.webp",
+      "/imagenes/5_Atracciones/Muro de Escalar/Muro-de-escalar-3.webp",
+      "/imagenes/5_Atracciones/Muro de Escalar/Muro-de-escalar-4.webp",
     ],
     description:
       "Muros de escalada portátiles con diferentes niveles de dificultad. Perfectos para activaciones deportivas, empresariales y eventos escolares.",
@@ -112,14 +114,13 @@ export const atracciones: Atraccion[] = [
       "Botes de pedal para actividades acuáticas recreativas en piscinas, lagos y zonas de agua en eventos y festivales.",
   },
   {
-    title: "Play Drump",
-    category: "Play Drump",
+    title: "Playgrounds",
+    category: "Playgrounds",
     dimensions: "Estándar",
     image: [
-      "/imagenes/5_Atracciones/Play drump/play-drump-1.webp",
-      "/imagenes/5_Atracciones/Play drump/play-drump-2.webp",
+      "/imagenes/5_Atracciones/Playgrounds/playground.webp",
     ],
     description:
-      "Área de juegos interactivos y estimulación temprana para los más pequeños. Ideal para zonas infantiles en eventos familiares y corporativos.",
+      "Creamos circuitos de aventura y juego infantil diseñados para cautivar a los más pequeños y ofrecer absoluta tranquilidad a los padres y organizadores. Nuestros Playgrounds modulares combinan ingeniería estructural, materiales acolchados de alta resistencia y temáticas personalizables que se adaptan a cualquier área disponible, ya sea en interiores o bajo nuestras carpas estructurales.",
   },
 ];
