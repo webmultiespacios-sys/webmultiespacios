@@ -134,7 +134,6 @@ export const metadata: Metadata = {
     "carros chocones jumping muro escalar",
     "producción eventos corporativos Bogotá",
     "producción eventos gubernamentales",
-    "campamentos corporativos bodegas temporales",
     "logística integral eventos masivos",
     // ── Palabras en inglés (ampliar espectro) ──
     "tent rental Colombia",
