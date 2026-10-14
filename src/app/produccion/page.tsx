@@ -202,7 +202,7 @@ export default function ProduccionPage() {
             className="max-w-3xl"
           >
             <h1 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-5 lg:mt-8">
-              Producción <span className="text-brand-accent-light">de Eventos</span>
+              Producción de Eventos
             </h1>
             <p className="text-lg text-white/70 leading-relaxed">
               Producción integral de eventos corporativos, gubernamentales, ferias regionales y universitarias. Infraestructura, logística y montaje de alto nivel para cada ocasión.

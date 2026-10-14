@@ -215,13 +215,12 @@ export default function CarpasPage() {
             className="max-w-3xl"
           >
             <h1 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-5 lg:mt-8">
-              Carpas, Pabellones{" "}
+              Carpas, pabellones{" "}
               <span className="text-brand-accent-light">y techos</span>
             </h1>
             <p className="text-lg text-white/70 leading-relaxed">
-              Contamos con diferentes tipos de carpas, que varían dependiendo del
-              estilo, diseño, funciones y características, incluyendo desde carpas
-              simples hasta pabellones completos.
+              Contamos con diferentes tipos de carpas, diseñadas para adaptarse a cada estilo, necesidad y espacio.
+              Desde soluciones sencillas hasta pabellones completos, ofrecemos opciones funcionales y visualmente impactantes.
             </p>
           </motion.div>
         </div>

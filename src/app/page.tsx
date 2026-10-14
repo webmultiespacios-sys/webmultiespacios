@@ -94,7 +94,7 @@ const services = [
   },
   {
     icon: FaVideo,
-    title: "Producción Eventos",
+    title: "Producción de Eventos",
     description:
       "Producción integral de eventos corporativos, gubernamentales y ferias regionales con infraestructura y personal certificado.",
     image: "/imagenes/6_Produccion_de_eventos/Ferias y Eventos Regionales/feria-regional-7.webp",
@@ -473,7 +473,7 @@ export default function HomePage() {
               <div className="text-xl font-extrabold text-white select-none">
                 <Counter value={35} trigger={startCount} suffix="+" />
               </div>
-              <div className="text-xs text-white/60 font-medium leading-tight">Años de Exp.</div>
+              <div className="text-xs text-white/60 font-medium leading-tight">Años de experiencia</div>
             </div>
           </div>
           <div className="flex items-center gap-3 bg-white/5 rounded-2xl p-4 border border-white/10">
@@ -484,7 +484,7 @@ export default function HomePage() {
               <div className="text-xl font-extrabold text-white select-none">
                 <Counter value={10} trigger={startCount} suffix=" K+" />
               </div>
-              <div className="text-xs text-white/60 font-medium leading-tight">Eventos</div>
+              <div className="text-xs text-white/60 font-medium leading-tight">Eventos realizados</div>
             </div>
           </div>
           <motion.div 
@@ -498,7 +498,7 @@ export default function HomePage() {
             </div>
             <div>
               <div className="text-xl font-extrabold text-white">Nacional</div>
-              <div className="text-xs text-white/60 font-medium leading-tight">Cobertura</div>
+              <div className="text-xs text-white/60 font-medium leading-tight">Cobertura nacional</div>
             </div>
           </motion.div>
           <motion.div 
@@ -544,7 +544,7 @@ export default function HomePage() {
               custom={1}
               className="text-brand-dark/60 max-w-2xl mx-auto mb-6"
             >
-              Equipos, estructuras y mobiliario de Alta calidad para todo tipo de eventos e instalaciones
+              Equipos, estructuras y mobiliario de alta calidad para todo tipo de eventos e instalaciones.
             </motion.p>
 
             <motion.div

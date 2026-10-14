@@ -202,10 +202,10 @@ export default function AtraccionesPage() {
             className="max-w-3xl"
           >
             <h1 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-5 lg:mt-8">
-              Atracciones <span className="text-brand-accent-light">para Eventos</span>
+              Atracciones <span className="text-brand-accent-light">para eventos</span>
             </h1>
             <p className="text-lg text-white/70 leading-relaxed">
-              Toboganes gigantes, carros chocones, muros de escalar, jumping y mucho más. Atracciones de primera calidad para activar y entretener a todos tus invitados.
+              Toboganes gigantes, carros chocones, muros de escalar, jumping y mucho más. Atracciones de primera calidad para animar y entretener a todos tus invitados.
             </p>
           </motion.div>
         </div>

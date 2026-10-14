@@ -214,11 +214,11 @@ export default function MobiliarioPage() {
             className="max-w-3xl"
           >
             <h1 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-5 lg:mt-8">
-              Mobiliario <span className="text-brand-accent-light">y Accesorios</span>
+              Mobiliario <span className="text-brand-accent-light">y accesorios</span>
             </h1>
             <p className="text-lg text-white/70 leading-relaxed">
-              Proveemos mobiliario para todo tipo de evento, Salas Lounge, Puff, alquiler de sillas, mesas y exhibición.
-              Ofrecemos productos de buena calidad y así satisfacer las necesidades de nuestros clientes
+              Proveemos mobiliario para todo tipo de eventos, incluyendo salas lounge, puff, sillas, mesas y piezas de exhibición.
+              Ofrecemos soluciones de alta calidad para satisfacer las necesidades de cada cliente y cada ocasión.
             </p>
           </motion.div>
         </div>
