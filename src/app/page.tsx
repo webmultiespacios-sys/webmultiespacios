@@ -330,13 +330,13 @@ export default function HomePage() {
                   <FaWhatsapp className="w-5 h-5" />
                   Cotizar por WhatsApp
                 </a>
-                <Link
-                  href="/stands"
+                <a
+                  href="#servicios"
                   className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full text-base font-semibold border border-white/20 transition-all hover:-translate-y-0.5"
                 >
                   Ver servicios
                   <FiArrowRight className="w-4 h-4" />
-                </Link>
+                </a>
               </motion.div>
             </div>
 
@@ -519,7 +519,7 @@ export default function HomePage() {
       </div>
 
       {/* ============ SERVICES SECTION ============ */}
-      <section className="relative pt-12 pb-24 bg-white overflow-hidden">
+      <section id="servicios" className="relative pt-12 pb-24 bg-white overflow-hidden">
         {/* Fondo Decorativo Abstracto */}
         <div 
           className="absolute inset-0 z-0 opacity-[0.6] bg-[length:350px] md:bg-[length:500px] bg-center bg-repeat" 
@@ -1015,7 +1015,7 @@ export default function HomePage() {
       <section className="relative pt-12 pb-24 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://www.multiespacios.com.co/wp-content/uploads/2025/02/Stand-4-x4-800x600.jpg"
+            src="/imagenes/4 Ferias y Stands/Más tipos de Stands/stand-geometric.webp"
             alt="CTA Background"
             fill
             className="object-cover"

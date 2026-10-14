@@ -14,11 +14,11 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://www.multiespacios.com.co/",
       url: "https://www.multiespacios.com.co/",
-      name: "Alquiler de carpas y mobiliarios - Multiespacios SAS",
+      name: "Alquiler de Carpas, Stands y Atracciones para Eventos | Multiespacios SAS",
       isPartOf: { "@id": "https://www.multiespacios.com.co/#website" },
       about: { "@id": "https://www.multiespacios.com.co/#organization" },
       description:
-        "Alquiler de Carpas y Producción de Eventos, tarimas, sonido, mesas, sillas, barandas, pisos, techos, estructuras, andamios y más 3125575477",
+        "Alquiler de carpas, stands, tarimas, escenarios, mobiliario, sillas, mesas, estructuras truss, andamios, atracciones mecánicas y producción integral de eventos en Colombia. Tent rental, stage rental, event production Colombia.",
       inLanguage: "es-CO",
       potentialAction: [
         {
@@ -33,23 +33,43 @@ const jsonLd = {
       url: "https://www.multiespacios.com.co/",
       name: "Multiespacios SAS",
       description:
-        "Alquiler de carpas, mobiliario, piso, techos, truss y andamios para eventos",
+        "Alquiler de carpas, mobiliario, tarimas, escenarios, pisos, techos, truss, andamios, stands y atracciones para eventos en Colombia. Event equipment rental Colombia.",
       publisher: { "@id": "https://www.multiespacios.com.co/#organization" },
       inLanguage: "es-CO",
     },
     {
-      "@type": "Organization",
+      "@type": ["Organization", "LocalBusiness"],
       "@id": "https://www.multiespacios.com.co/#organization",
       name: "Multiespacios SAS",
+      alternateName: "ABC Multiespacios SAS",
       url: "https://www.multiespacios.com.co/",
-      telephone: "+573125575477",
+      telephone: ["+573125575477", "+573138004323"],
+      email: "comercial@multiespacios.com.co",
+      priceRange: "$$",
+      foundingDate: "1990",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Cra 87 # 84A-25",
+        addressLocality: "Bogotá",
+        addressRegion: "Cundinamarca",
+        postalCode: "111071",
+        addressCountry: "CO",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 4.7071916,
+        longitude: -74.0991715,
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "Colombia",
+      },
       logo: {
         "@type": "ImageObject",
         inLanguage: "es-CO",
         "@id": "https://www.multiespacios.com.co/#/schema/logo/image/",
-        url: "https://www.multiespacios.com.co/wp-content/uploads/2025/02/horizontal-scaled.jpg",
-        contentUrl:
-          "https://www.multiespacios.com.co/wp-content/uploads/2025/02/horizontal-scaled.jpg",
+        url: "/imagenes/logos/image2.png",
+        contentUrl: "/imagenes/logos/image2.png",
         width: 2560,
         height: 619,
         caption: "Multiespacios SAS",
@@ -58,8 +78,23 @@ const jsonLd = {
         "@id": "https://www.multiespacios.com.co/#/schema/logo/image/",
       },
       sameAs: [
-        "https://www.facebook.com/multiespacios",
-        "https://www.instagram.com/multiespacios",
+        "https://www.instagram.com/abcmultiespacios/",
+        "https://www.facebook.com/abcmultiespacios",
+        "https://www.tiktok.com/@multiespaciosltda",
+        "https://www.youtube.com/@MultiespaciosSAS",
+      ],
+      knowsAbout: [
+        "Alquiler de carpas para eventos",
+        "Diseño y fabricación de stands",
+        "Tarimas y escenarios para conciertos",
+        "Mobiliario para eventos corporativos",
+        "Estructuras truss y scaffold",
+        "Atracciones mecánicas y recreativas",
+        "Producción integral de eventos",
+        "Arquitectura efímera",
+        "Tent rental for events",
+        "Trade show booth design",
+        "Event production Colombia",
       ],
     },
   ],
@@ -67,33 +102,62 @@ const jsonLd = {
 
 // ─── Next.js Metadata ─────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  // Combina keywords del WP (carpas, mobiliario) + nuevos servicios (stands, atracciones)
   title: "Alquiler de Carpas, Stands y Atracciones para Eventos | Multiespacios SAS",
   description:
-    "35+ años produciendo eventos en Colombia. Alquiler de carpas, stands, mobiliario, estructuras, tarimas, atracciones mecánicas y producción integral de eventos. Cobertura nacional. ☎ 3125575477",
+    "35+ años produciendo eventos en Colombia. Alquiler de carpas, toldos, stands, tarimas, escenarios, mobiliario, sillas, mesas, estructuras truss, andamios, atracciones mecánicas y producción integral. Cobertura nacional. Tent & stage rental Colombia. ☎ 3125575477",
   keywords: [
-    // Keywords del WP que ya rankean
+    // ── Keywords heredadas del WP (posicionadas) ──
     "alquiler carpas",
+    "alquiler carpas Colombia",
     "alquiler mobiliario eventos",
     "tarimas eventos",
     "andamios alquiler",
     "estructuras eventos Colombia",
-    // Keywords nuevas del sitio
+    // ── Sinónimos creativos de productos ──
+    "alquiler toldos eventos",
+    "carpas tipo pagoda pabellón hangar",
+    "escenarios para conciertos",
+    "plataformas para eventos",
+    "tarimas escenarios andamios estructuras",
+    "alquiler sillas mesas salas lounge",
+    "pisos alfombras eventos",
+    "graderías tribunas eventos",
+    "pórticos arcos de entrada",
+    "cortinaje pipe drape divisiones",
+    // ── Keywords nuevas (nuevos servicios) ──
     "alquiler stands ferias Colombia",
-    "diseño fabricación stands",
+    "diseño fabricación montaje stands",
+    "stands octanorm panelería scaffold trimalla",
+    "backings publicitarios photocall",
     "tobogán arcoíris alquiler",
-    "atracciones mecánicas eventos",
+    "atracciones mecánicas recreativas eventos",
+    "carros chocones jumping muro escalar",
     "producción eventos corporativos Bogotá",
-    "campamentos corporativos Colombia",
-    "alquiler sillas mesas eventos",
+    "producción eventos gubernamentales",
+    "campamentos corporativos bodegas temporales",
+    "logística integral eventos masivos",
+    // ── Palabras en inglés (ampliar espectro) ──
+    "tent rental Colombia",
+    "event tent hire Bogota",
+    "stage rental Colombia",
+    "trade show booth rental",
+    "exhibition stand Colombia",
+    "event furniture rental",
+    "event production company Colombia",
+    "scaffolding stage Colombia",
+    "truss structure rental",
+    "mechanical rides rental events",
+    // ── Marca y entidad ──
     "Multiespacios SAS",
+    "ABC Multiespacios",
     "arquitectura efímera Colombia",
+    "ephemeral architecture Colombia",
   ],
-  // Canonical URL — crítico para conservar autoridad del dominio
+  // Canonical URL — conserva autoridad acumulada del dominio
   alternates: {
     canonical: "https://www.multiespacios.com.co/",
   },
-  // Robots — idéntico al WP (max-image-preview mejora el ranking)
+  // Robots — idéntico al WP (max-image-preview mejora el CTR en SERPs)
   robots: {
     index: true,
     follow: true,
@@ -105,11 +169,11 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  // Open Graph — título refleja el nuevo catálogo completo
+  // Open Graph — para compartir en redes sociales
   openGraph: {
     title: "Alquiler de Carpas, Stands y Atracciones para Eventos | Multiespacios SAS",
     description:
-      "35+ años produciendo eventos en Colombia. Carpas, stands, mobiliario, estructuras, atracciones y producción integral. Cobertura nacional.",
+      "35+ años produciendo eventos en Colombia. Carpas, toldos, stands, tarimas, escenarios, mobiliario, estructuras, atracciones y producción integral. Tent & stage rental.",
     url: "https://www.multiespacios.com.co/",
     siteName: "Multiespacios SAS",
     type: "website",
@@ -119,7 +183,7 @@ export const metadata: Metadata = {
         url: "https://www.multiespacios.com.co/wp-content/uploads/2025/02/horizontal-scaled.jpg",
         width: 2560,
         height: 619,
-        alt: "Multiespacios SAS — Alquiler de carpas, stands y atracciones para eventos",
+        alt: "Multiespacios SAS — Alquiler de carpas, stands, tarimas y atracciones para eventos en Colombia",
       },
     ],
   },
@@ -128,7 +192,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Alquiler de Carpas, Stands y Atracciones para Eventos | Multiespacios SAS",
     description:
-      "35+ años produciendo eventos en Colombia. Carpas, stands, mobiliario, estructuras, atracciones y producción integral. Cobertura nacional.",
+      "35+ años produciendo eventos en Colombia. Carpas, stands, tarimas, mobiliario, atracciones y producción integral. Tent & stage rental.",
     images: [
       "https://www.multiespacios.com.co/wp-content/uploads/2025/02/horizontal-scaled.jpg",
     ],

@@ -380,7 +380,7 @@ export default function StandsPage() {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://www.multiespacios.com.co/wp-content/uploads/2025/02/Stand-3m-x-2m-800x600.jpg"
+            src="/imagenes/4 Ferias y Stands/Más tipos de Stands/stand-modular.webp"
             alt="Stand Multiespacios"
             fill
             className="object-cover"
