@@ -289,7 +289,7 @@ export default function HomePage() {
 
         {/* Content */}
         <div className="relative max-w-7xl mx-auto px-6 w-full z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-center">
             
             {/* Left Column: Text & CTA */}
             <div className="lg:col-span-6 xl:col-span-5 flex flex-col justify-center">
@@ -319,29 +319,29 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.45, duration: 0.6 }}
-                className="flex flex-col sm:flex-row gap-4"
+                className="grid grid-cols-2 gap-3 sm:flex sm:flex-row sm:gap-4"
               >
                 <a
                   href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25 hover:-translate-y-0.5"
+                  className="inline-flex min-w-0 items-center justify-center gap-2 bg-brand-green hover:bg-brand-green-dark text-white px-3 py-3 text-[12px] leading-tight sm:px-8 sm:py-4 sm:text-base font-semibold rounded-full transition-all hover:shadow-xl hover:shadow-brand-green/25 hover:-translate-y-0.5"
                 >
-                  <FaWhatsapp className="w-5 h-5" />
+                  <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5" />
                   Cotizar por WhatsApp
                 </a>
                 <a
                   href="#servicios"
-                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full text-base font-semibold border border-white/20 transition-all hover:-translate-y-0.5"
+                  className="inline-flex min-w-0 items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-3 py-3 text-[12px] leading-tight sm:px-8 sm:py-4 sm:text-base font-semibold border border-white/20 rounded-full transition-all hover:-translate-y-0.5"
                 >
-                  Ver servicios
-                  <FiArrowRight className="w-4 h-4" />
+                  <span className="truncate">Ver servicios</span>
+                  <FiArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </a>
               </motion.div>
             </div>
 
             {/* Right Column: Dynamic Carousel */}
-            <div className="lg:col-span-6 xl:col-span-7 relative h-[400px] sm:h-[450px] lg:h-[550px] w-full mt-8 lg:mt-0 flex items-center justify-center lg:justify-end perspective-1000">
+            <div className="lg:col-span-6 xl:col-span-7 relative h-[400px] sm:h-[450px] lg:h-[550px] w-full mt-4 lg:mt-0 flex items-center justify-center lg:justify-end perspective-1000">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}

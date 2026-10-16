@@ -67,18 +67,28 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col items-center justify-center gap-3 text-center">
           <p className="text-xs text-white/50">
             © {new Date().getFullYear()} Multiespacios S.A.S. Todos los
             derechos reservados.
           </p>
-          <div className="flex items-center gap-6 text-xs text-white/50">
-            <Link href="#" className="hover:text-white transition-colors">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-white/50">
+            <Link href="#" className="hover:text-white transition-colors whitespace-nowrap">
               Política de privacidad
             </Link>
-            <Link href="#" className="hover:text-white transition-colors">
+            <Link href="#" className="hover:text-white transition-colors whitespace-nowrap">
               Términos y condiciones
             </Link>
+            <span className="whitespace-nowrap">Developed by</span>
+            <a
+              href="https://www.degnisdev.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whitespace-nowrap font-semibold transition-colors hover:text-[#00FF90]"
+              style={{ color: "#00FF90" }}
+            >
+              degnisDev
+            </a>
           </div>
         </div>
       </div>
