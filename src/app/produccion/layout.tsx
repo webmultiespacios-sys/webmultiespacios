@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_ORIGIN } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Producción Integral de Eventos Corporativos, Ferias y Espectáculos | Multiespacios SAS",
@@ -29,13 +30,13 @@ export const metadata: Metadata = {
     "brand activation event Colombia",
   ],
   alternates: {
-    canonical: "https://www.multiespacios.com.co/produccion",
+    canonical: `${SITE_ORIGIN}/produccion`,
   },
   openGraph: {
     title: "Producción Integral de Eventos Corporativos y Ferias | Multiespacios SAS",
     description:
       "Producción de eventos corporativos, gubernamentales y ferias. Escenografía, iluminación, sonido y logística. Event production Colombia.",
-    url: "https://www.multiespacios.com.co/produccion",
+    url: `${SITE_ORIGIN}/produccion`,
     siteName: "Multiespacios SAS",
     type: "website",
     locale: "es_CO",

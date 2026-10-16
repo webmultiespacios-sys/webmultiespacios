@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_ORIGIN } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Alquiler de Mobiliario para Eventos — Sillas, Mesas, Lounge y Camerinos | Multiespacios SAS",
@@ -32,13 +33,13 @@ export const metadata: Metadata = {
     "event carpet flooring rental",
   ],
   alternates: {
-    canonical: "https://www.multiespacios.com.co/mobiliario",
+    canonical: `${SITE_ORIGIN}/mobiliario`,
   },
   openGraph: {
     title: "Alquiler de Mobiliario para Eventos — Sillas, Mesas y Lounge | Multiespacios SAS",
     description:
       "20+ tipos de sillas, mesas, salas lounge, camerinos y accesorios para eventos. Event furniture rental Colombia.",
-    url: "https://www.multiespacios.com.co/mobiliario",
+    url: `${SITE_ORIGIN}/mobiliario`,
     siteName: "Multiespacios SAS",
     type: "website",
     locale: "es_CO",

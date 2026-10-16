@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_ORIGIN } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Alquiler de Carpas para Eventos en Colombia — Pagoda, Pabellón, Hangar | Multiespacios SAS",
@@ -27,13 +28,13 @@ export const metadata: Metadata = {
     "outdoor event canopy Colombia",
   ],
   alternates: {
-    canonical: "https://www.multiespacios.com.co/carpas",
+    canonical: `${SITE_ORIGIN}/carpas`,
   },
   openGraph: {
     title: "Alquiler de Carpas para Eventos en Colombia | Multiespacios SAS",
     description:
       "Carpas pagoda, pabellón, hangar y domo con montaje certificado. Toldos y cubiertas temporales. Tent rental Colombia. Cobertura nacional.",
-    url: "https://www.multiespacios.com.co/carpas",
+    url: `${SITE_ORIGIN}/carpas`,
     siteName: "Multiespacios SAS",
     type: "website",
     locale: "es_CO",

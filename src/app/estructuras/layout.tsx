@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_ORIGIN } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Alquiler de Tarimas, Escenarios y Estructuras Truss | Multiespacios SAS",
@@ -30,13 +31,13 @@ export const metadata: Metadata = {
     "event bleachers grandstand rental",
   ],
   alternates: {
-    canonical: "https://www.multiespacios.com.co/estructuras",
+    canonical: `${SITE_ORIGIN}/estructuras`,
   },
   openGraph: {
     title: "Alquiler de Tarimas, Escenarios y Estructuras Truss | Multiespacios SAS",
     description:
       "Tarimas, escenarios, plataformas, truss, scaffold, graderías y pórticos certificados. Stage & truss rental Colombia.",
-    url: "https://www.multiespacios.com.co/estructuras",
+    url: `${SITE_ORIGIN}/estructuras`,
     siteName: "Multiespacios SAS",
     type: "website",
     locale: "es_CO",

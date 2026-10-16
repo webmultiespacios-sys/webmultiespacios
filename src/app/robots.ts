@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { SITE_ORIGIN } from "@/config/site";
 
 /**
  * Archivo robots.txt generado automáticamente por Next.js.
@@ -14,7 +15,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://www.multiespacios.com.co/sitemap.xml",
-    host: "https://www.multiespacios.com.co",
+    sitemap: `${SITE_ORIGIN}/sitemap.xml`,
+    host: SITE_ORIGIN,
   };
 }

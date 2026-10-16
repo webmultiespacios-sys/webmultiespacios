@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_ORIGIN } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Alquiler de Atracciones Mecánicas y Recreativas para Eventos | Multiespacios SAS",
@@ -33,13 +34,13 @@ export const metadata: Metadata = {
     "ninja warrior obstacle course rental",
   ],
   alternates: {
-    canonical: "https://www.multiespacios.com.co/atracciones",
+    canonical: `${SITE_ORIGIN}/atracciones`,
   },
   openGraph: {
     title: "Alquiler de Atracciones Mecánicas y Recreativas | Multiespacios SAS",
     description:
       "Tobogán arcoíris, carros chocones, jumping, muro escalar, cuatrimotos y playgrounds. Rides & attractions rental Colombia.",
-    url: "https://www.multiespacios.com.co/atracciones",
+    url: `${SITE_ORIGIN}/atracciones`,
     siteName: "Multiespacios SAS",
     type: "website",
     locale: "es_CO",

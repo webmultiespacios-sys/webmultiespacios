@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_ORIGIN } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Diseño, Fabricación y Alquiler de Stands para Ferias y Exposiciones | Multiespacios SAS",
@@ -31,13 +32,13 @@ export const metadata: Metadata = {
     "press wall backdrop rental",
   ],
   alternates: {
-    canonical: "https://www.multiespacios.com.co/stands",
+    canonical: `${SITE_ORIGIN}/stands`,
   },
   openGraph: {
     title: "Diseño y Alquiler de Stands para Ferias y Exposiciones | Multiespacios SAS",
     description:
       "Stands Octanorm, panelería, Scaffold, Trimalla y backings. Diseño, fabricación y montaje. Booth rental & stand design Colombia.",
-    url: "https://www.multiespacios.com.co/stands",
+    url: `${SITE_ORIGIN}/stands`,
     siteName: "Multiespacios SAS",
     type: "website",
     locale: "es_CO",

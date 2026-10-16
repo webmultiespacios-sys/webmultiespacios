@@ -6,13 +6,14 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiSearch, FiX, FiArrowRight, FiCheckCircle } from "react-icons/fi";
 import { searchIndex, SearchItem } from "@/data/searchIndex";
+import { buildWhatsAppUrl } from "@/config/site";
 
 interface SearchModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-// Función helper para remover tildes y acentos
+// La funcion normaliza el texto para permitir busquedas sin tildes.
 function normalizeText(text: string): string {
   return text
     .toLowerCase()
@@ -24,7 +25,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Auto-focus al abrir
+  // Al abrir el modal, el cursor pasa automaticamente al campo de busqueda.
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => {
@@ -35,7 +36,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
     }
   }, [isOpen]);
 
-  // Manejar tecla Escape
+  // Este listener permite cerrar el modal al presionar Escape.
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
@@ -46,7 +47,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
-  // Filtrado de resultados por tokens de palabras
+  // El filtrado exige que todos los tokens escritos esten presentes.
   const normalizedQuery = normalizeText(query.trim());
   const queryTokens = normalizedQuery.split(/\s+/).filter(Boolean);
 
@@ -155,9 +156,9 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     ¿Requieres un montaje especial o personalizado? ¡Contáctanos directamente!
                   </p>
                   <a
-                    href={`https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20estoy%20buscando%20informaci%C3%B3n%20sobre%3A%20${encodeURIComponent(
-                      query
-                    )}`}
+                    href={buildWhatsAppUrl(
+                      `Hola Multiespacios, estoy buscando informacion sobre: ${query}`
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={onClose}

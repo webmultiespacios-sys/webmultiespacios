@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { GlobalSearchModal } from "@/components/SearchModal";
+import { ANALYTICS, CONTACT, SITE_ORIGIN } from "@/config/site";
 
 // ─── SEO: Schema.org JSON-LD ─────────────────────────────────────────────────
 const jsonLd = {
@@ -12,39 +13,39 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://www.multiespacios.com.co/",
-      url: "https://www.multiespacios.com.co/",
+      "@id": `${SITE_ORIGIN}/`,
+      url: `${SITE_ORIGIN}/`,
       name: "Alquiler de Carpas, Stands y Atracciones para Eventos | Multiespacios SAS",
-      isPartOf: { "@id": "https://www.multiespacios.com.co/#website" },
-      about: { "@id": "https://www.multiespacios.com.co/#organization" },
+      isPartOf: { "@id": `${SITE_ORIGIN}/#website` },
+      about: { "@id": `${SITE_ORIGIN}/#organization` },
       description:
         "Alquiler de carpas, stands, tarimas, escenarios, mobiliario, sillas, mesas, estructuras truss, andamios, atracciones mecánicas y producción integral de eventos en Colombia. Tent rental, stage rental, event production Colombia.",
       inLanguage: "es-CO",
       potentialAction: [
         {
           "@type": "ReadAction",
-          target: ["https://www.multiespacios.com.co/"],
+          target: [`${SITE_ORIGIN}/`],
         },
       ],
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.multiespacios.com.co/#website",
-      url: "https://www.multiespacios.com.co/",
+      "@id": `${SITE_ORIGIN}/#website`,
+      url: `${SITE_ORIGIN}/`,
       name: "Multiespacios SAS",
       description:
         "Alquiler de carpas, mobiliario, tarimas, escenarios, pisos, techos, truss, andamios, stands y atracciones para eventos en Colombia. Event equipment rental Colombia.",
-      publisher: { "@id": "https://www.multiespacios.com.co/#organization" },
+      publisher: { "@id": `${SITE_ORIGIN}/#organization` },
       inLanguage: "es-CO",
     },
     {
       "@type": ["Organization", "LocalBusiness"],
-      "@id": "https://www.multiespacios.com.co/#organization",
+      "@id": `${SITE_ORIGIN}/#organization`,
       name: "Multiespacios SAS",
       alternateName: "ABC Multiespacios SAS",
-      url: "https://www.multiespacios.com.co/",
-      telephone: ["+573125575477", "+573138004323"],
-      email: "comercial@multiespacios.com.co",
+      url: `${SITE_ORIGIN}/`,
+      telephone: [CONTACT.primaryPhone, CONTACT.secondaryPhone],
+      email: CONTACT.email,
       priceRange: "$$",
       foundingDate: "1990",
       address: {
@@ -67,7 +68,7 @@ const jsonLd = {
       logo: {
         "@type": "ImageObject",
         inLanguage: "es-CO",
-        "@id": "https://www.multiespacios.com.co/#/schema/logo/image/",
+        "@id": `${SITE_ORIGIN}/#/schema/logo/image/`,
         url: "/imagenes/logos/image2.png",
         contentUrl: "/imagenes/logos/image2.png",
         width: 2560,
@@ -75,7 +76,7 @@ const jsonLd = {
         caption: "Multiespacios SAS",
       },
       image: {
-        "@id": "https://www.multiespacios.com.co/#/schema/logo/image/",
+        "@id": `${SITE_ORIGIN}/#/schema/logo/image/`,
       },
       sameAs: [
         "https://www.instagram.com/abcmultiespacios/",
@@ -154,7 +155,7 @@ export const metadata: Metadata = {
   ],
   // Canonical URL — conserva autoridad acumulada del dominio
   alternates: {
-    canonical: "https://www.multiespacios.com.co/",
+    canonical: `${SITE_ORIGIN}/`,
   },
   // Robots — idéntico al WP (max-image-preview mejora el CTR en SERPs)
   robots: {
@@ -173,7 +174,7 @@ export const metadata: Metadata = {
     title: "Alquiler de Carpas, Stands y Atracciones para Eventos | Multiespacios SAS",
     description:
       "35+ años produciendo eventos en Colombia. Carpas, toldos, stands, tarimas, escenarios, mobiliario, estructuras, atracciones y producción integral. Tent & stage rental.",
-    url: "https://www.multiespacios.com.co/",
+    url: `${SITE_ORIGIN}/`,
     siteName: "Multiespacios SAS",
     type: "website",
     locale: "es_CO",
@@ -216,16 +217,16 @@ export default function RootLayout({
         {/* Google Tag Manager — ID preservado del sitio anterior */}
         <Script
           id="gtag-init"
-          src="https://www.googletagmanager.com/gtag/js?id=GT-MJSZCMJ"
+          src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS.gtmId}`}
           strategy="afterInteractive"
         />
         <Script id="gtag-config" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            gtag('set', 'linker', { domains: ['www.multiespacios.com.co'] });
+            gtag('set', 'linker', { domains: ['${SITE_ORIGIN.replace("https://", "")}'] });
             gtag('js', new Date());
-            gtag('config', 'GT-MJSZCMJ');
+            gtag('config', '${ANALYTICS.gtmId}');
           `}
         </Script>
 

@@ -8,6 +8,7 @@ import { FiArrowRight, FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi
 import { FaWhatsapp } from "react-icons/fa";
 import { categories, stands } from "./data";
 import { SearchTriggerButton } from "@/components/SearchTriggerButton";
+import { buildReferenceUrl, buildWhatsAppUrl, CONTACT } from "@/config/site";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -18,7 +19,7 @@ const fadeInUp = {
   }),
 };
 
-// Helper function to extract and format product name from image URL
+// La funcion obtiene el nombre legible del producto desde la URL de la imagen.
 const getProductNameFromUrl = (url: string) => {
   if (!url || url.startsWith("http")) return "";
   const parts = url.split("/");
@@ -28,7 +29,7 @@ const getProductNameFromUrl = (url: string) => {
   return decoded.split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 };
 
-// Simple Carousel Component for Stands with multiple images
+// Este carrusel permite navegar entre imagenes del producto.
 function StandImageCarousel({ images, alt, onImageClick }: { images: string[]; alt: string, onImageClick: (images: string[], index: number) => void }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -113,7 +114,7 @@ export default function StandsPage() {
 
   return (
     <>
-      {/* ============ LIGHTBOX MODAL ============ */}
+      {/* Este bloque renderiza el visor ampliado de imagenes. */}
       <AnimatePresence>
         {selectedItem && (
           <motion.div
@@ -272,7 +273,7 @@ export default function StandsPage() {
               };
               
               const firstImage = Array.isArray(stand.image) ? stand.image[0] : stand.image;
-              const whatsappText = `Hola Multiespacios, me interesa cotizar el stand: ${stand.title}.\n\nReferencia: https://www.multiespacios.com.co${firstImage || ""}`;
+              const whatsappText = `Hola Multiespacios, me interesa cotizar el stand: ${stand.title}.\n\nReferencia: ${buildReferenceUrl(firstImage || "")}`;
 
               return (
                 <motion.div
@@ -338,8 +339,8 @@ export default function StandsPage() {
                         </p>
                       </div>
                       <div className="flex items-center justify-between pt-3 border-t border-brand-light/50">
-                        <a
-                          href={`https://wa.me/573125575477?text=${encodeURIComponent(whatsappText)}`}
+                            <a
+                              href={buildWhatsAppUrl(whatsappText)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
@@ -403,7 +404,9 @@ export default function StandsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20necesito%20un%20stand%20para%20una%20feria"
+                href={buildWhatsAppUrl(
+                  "Hola Multiespacios, necesito un stand para una feria"
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25"
@@ -412,7 +415,7 @@ export default function StandsPage() {
                 Cotizar mi stand
               </a>
               <a
-                href="tel:+573125575477"
+                href={`tel:${CONTACT.primaryPhone}`}
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full text-base font-semibold border border-white/20 transition-all"
               >
                 Hablar con un asesor

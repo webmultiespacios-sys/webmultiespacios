@@ -1,11 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { buildWhatsAppUrl } from "@/config/site";
 
 export function WhatsAppButton() {
   return (
     <motion.a
-      href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n"
+      href={buildWhatsAppUrl(
+        "Hola Multiespacios, me gustaria solicitar informacion"
+      )}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 bg-brand-green hover:bg-brand-green-dark text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-brand-green/30 animate-pulse-glow transition-colors"

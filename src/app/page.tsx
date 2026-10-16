@@ -21,6 +21,7 @@ import {
 } from "react-icons/fi";
 import { FaWhatsapp, FaCampground, FaChair, FaCubes, FaLayerGroup, FaVideo } from "react-icons/fa";
 import { SearchTriggerButton } from "@/components/SearchTriggerButton";
+import { buildWhatsAppUrl, CONTACT, MAPS } from "@/config/site";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -176,7 +177,7 @@ function Counter({
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      // Curve: easeOutQuad
+      // La animacion aplica una curva de salida suave.
       const easeProgress = progress * (2 - progress);
       setCount(Math.floor(easeProgress * value));
       if (progress < 1) {
@@ -322,7 +323,9 @@ export default function HomePage() {
                 className="grid grid-cols-2 gap-3 md:flex md:flex-row md:justify-center lg:justify-start sm:gap-4"
               >
                 <a
-                  href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n"
+                  href={buildWhatsAppUrl(
+                    "Hola Multiespacios, me gustaria solicitar una cotizacion"
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex min-w-0 items-center justify-center gap-2 bg-brand-green hover:bg-brand-green-dark text-white px-3 py-3 text-[12px] leading-tight sm:px-8 sm:py-4 sm:text-base font-semibold rounded-full transition-all hover:shadow-xl hover:shadow-brand-green/25 hover:-translate-y-0.5"
@@ -462,7 +465,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Mobile Stats Section (Mobile Only) */}
+      {/* Seccion de estadisticas para movil */}
       <div className="block md:hidden bg-brand-blue border-b border-brand-light py-4 px-6">
         <div className="grid grid-cols-2 gap-3">
           <div className="flex items-center gap-3 bg-white/5 rounded-2xl p-3 border border-white/10">
@@ -650,7 +653,9 @@ export default function HomePage() {
                 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20necesito%20Cotizar%20evento"
+                    href={buildWhatsAppUrl(
+                      "Hola Multiespacios, necesito cotizar evento"
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-brand-green hover:bg-brand-green-dark text-white px-7 py-3.5 rounded-full text-sm md:text-base font-semibold transition-all shadow-lg hover:shadow-brand-green/30 hover:-translate-y-0.5"
@@ -944,7 +949,7 @@ export default function HomePage() {
               className="w-full h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg border border-brand-light/50 group"
             >
               <iframe
-                src="https://maps.google.com/maps?q=Multiespacios+SAS,+Bogota&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src={MAPS.embedUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -983,7 +988,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-brand-dark/80 uppercase tracking-wider mb-1">Teléfono y WhatsApp</h4>
-                    <p className="text-brand-dark/70 text-base md:text-lg">312 557 54 77 – 313 800 43 23</p>
+                    <p className="text-brand-dark/70 text-base md:text-lg">{CONTACT.displayPhones}</p>
                   </div>
                 </li>
                 
@@ -993,13 +998,13 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-brand-dark/80 uppercase tracking-wider mb-1">Correo</h4>
-                    <p className="text-brand-dark/70 text-base md:text-lg">comercial@multiespacios.com.co</p>
+                    <p className="text-brand-dark/70 text-base md:text-lg">{CONTACT.email}</p>
                   </div>
                 </li>
               </ul>
 
               <a
-                href="https://www.google.com/maps/place/Multiespacios+SAS/@4.7071916,-74.0991715,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f84cadb68466d:0xc2d8f2839d6d3c14!8m2!3d4.7071916!4d-74.0991715!16s%2Fg%2F1pv05jl89?hl=es-419&entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+                href={MAPS.placeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-4 rounded-full text-base font-semibold transition-all shadow-lg hover:shadow-brand-blue/30 hover:-translate-y-0.5"
@@ -1038,7 +1043,7 @@ export default function HomePage() {
             </p>
             <div className="flex justify-center">
               <a
-                href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20quiero%20cotizar%20un%20evento"
+                href={buildWhatsAppUrl("Hola Multiespacios, quiero cotizar un evento")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25"

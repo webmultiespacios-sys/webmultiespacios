@@ -1,6 +1,5 @@
 import { MetadataRoute } from "next";
-
-const BASE_URL = "https://www.multiespacios.com.co";
+import { SITE_ORIGIN } from "@/config/site";
 
 /**
  * Sitemap automático de Next.js.
@@ -10,49 +9,49 @@ const BASE_URL = "https://www.multiespacios.com.co";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: BASE_URL,
+      url: SITE_ORIGIN,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
-      url: `${BASE_URL}/carpas`,
+      url: `${SITE_ORIGIN}/carpas`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/mobiliario`,
+      url: `${SITE_ORIGIN}/mobiliario`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/estructuras`,
+      url: `${SITE_ORIGIN}/estructuras`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/stands`,
+      url: `${SITE_ORIGIN}/stands`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/produccion`,
+      url: `${SITE_ORIGIN}/produccion`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/atracciones`,
+      url: `${SITE_ORIGIN}/atracciones`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/mobiliario/sillas`,
+      url: `${SITE_ORIGIN}/mobiliario/sillas`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.7,

@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowRight, FiChevronLeft, FiChevronRight, FiMapPin, FiPhone, FiMail, FiX } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { categories, stands } from "./data";
+import { buildReferenceUrl, buildWhatsAppUrl, CONTACT, MAPS } from "@/config/site";
 
 import { SearchTriggerButton } from "@/components/SearchTriggerButton";
 
@@ -19,7 +20,7 @@ const fadeInUp = {
   }),
 };
 
-// Helper function to extract and format product name from image URL
+// La funcion obtiene el nombre legible del producto desde la URL de la imagen.
 const getProductNameFromUrl = (url: string) => {
   if (!url) return "";
   const parts = url.split("/");
@@ -29,7 +30,7 @@ const getProductNameFromUrl = (url: string) => {
   return decoded.split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 };
 
-// Simple Carousel Component for Stands with multiple images
+// Este carrusel permite navegar entre imagenes del producto.
 function StandImageCarousel({ images, alt, onImageClick }: { images: string[]; alt: string, onImageClick: (images: string[], index: number) => void }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -115,7 +116,7 @@ export default function MobiliarioPage() {
 
   return (
     <>
-      {/* Lightbox Modal */}
+      {/* Este bloque renderiza el visor ampliado de imagenes. */}
       <AnimatePresence>
         {selectedItem && (
           <motion.div
@@ -267,7 +268,7 @@ export default function MobiliarioPage() {
                 }
               };
               const firstImage = Array.isArray(stand.image) ? stand.image[0] : stand.image;
-              const whatsappText = `Hola Multiespacios, me interesa cotizar ${stand.title}.\n\nReferencia: https://www.multiespacios.com.co${firstImage}`;
+              const whatsappText = `Hola Multiespacios, me interesa cotizar ${stand.title}.\n\nReferencia: ${buildReferenceUrl(firstImage)}`;
 
               return (
                 <motion.div
@@ -367,7 +368,7 @@ export default function MobiliarioPage() {
                         ) : (
                           <>
                             <a
-                              href={`https://wa.me/573125575477?text=${encodeURIComponent(whatsappText)}`}
+                              href={buildWhatsAppUrl(whatsappText)}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green hover:text-brand-green-dark transition-colors"
@@ -428,7 +429,9 @@ export default function MobiliarioPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20necesito%20mobiliario%20para%20un%20evento"
+                href={buildWhatsAppUrl(
+                  "Hola Multiespacios, necesito mobiliario para un evento"
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25"
@@ -437,7 +440,7 @@ export default function MobiliarioPage() {
                 Cotizar ahora
               </a>
               <a
-                href="tel:+573125575477"
+                href={`tel:${CONTACT.primaryPhone}`}
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full text-base font-semibold border border-white/20 transition-all"
               >
                 Hablar con un asesor
@@ -473,7 +476,7 @@ export default function MobiliarioPage() {
               className="w-full h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg border border-brand-light/50 group"
             >
               <iframe
-                src="https://maps.google.com/maps?q=Multiespacios+SAS,+Bogota&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src={MAPS.embedUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -512,7 +515,7 @@ export default function MobiliarioPage() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-brand-dark/80 uppercase tracking-wider mb-1">Teléfono y WhatsApp</h4>
-                    <p className="text-brand-dark/70 text-base md:text-lg">312 557 54 77 – 313 800 43 23</p>
+                    <p className="text-brand-dark/70 text-base md:text-lg">{CONTACT.displayPhones}</p>
                   </div>
                 </li>
 
@@ -522,13 +525,13 @@ export default function MobiliarioPage() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-brand-dark/80 uppercase tracking-wider mb-1">Correo</h4>
-                    <p className="text-brand-dark/70 text-base md:text-lg">comercial@multiespacios.com.co</p>
+                    <p className="text-brand-dark/70 text-base md:text-lg">{CONTACT.email}</p>
                   </div>
                 </li>
               </ul>
 
               <a
-                href="https://www.google.com/maps/place/Multiespacios+SAS/@4.7071916,-74.0991715,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f84cadb68466d:0xc2d8f2839d6d3c14!8m2!3d4.7071916!4d-74.0991715!16s%2Fg%2F1pv05jl89?hl=es-419&entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+                href={MAPS.placeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-4 rounded-full text-base font-semibold transition-all shadow-lg hover:shadow-brand-blue/30 hover:-translate-y-0.5"
