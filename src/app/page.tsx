@@ -279,7 +279,7 @@ export default function HomePage() {
   return (
     <>
       {/* ============ HERO SECTION ============ */}
-      <section className="relative min-h-[85vh] lg:min-h-[80vh] flex items-center overflow-hidden bg-brand-blue pt-32 pb-44 lg:pt-40 lg:pb-44">
+      <section className="relative min-h-[85vh] lg:min-h-[80vh] flex items-center overflow-hidden bg-brand-blue pt-32 pb-20 lg:pt-40 lg:pb-44">
         {/* Abstract Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[70%] rounded-full bg-brand-blue-light/20 blur-[120px]" />
@@ -292,13 +292,13 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-center">
             
             {/* Left Column: Text & CTA */}
-            <div className="lg:col-span-6 xl:col-span-5 flex flex-col justify-center">
+            <div className="lg:col-span-6 xl:col-span-5 flex flex-col justify-center md:items-center md:text-center lg:items-start lg:text-left">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15, duration: 0.6 }}
                 onAnimationComplete={() => setStartCount(true)}
-                className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.1] mb-6"
+                className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold text-white leading-[1.1] mb-6 max-w-3xl"
               >
                 Soluciones integrales para{" "}
                 <span className="text-brand-accent-light">eventos corporativos</span>{" "}
@@ -309,7 +309,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-lg text-white/75 leading-relaxed mb-10 max-w-lg"
+                className="text-lg text-white/75 leading-relaxed mb-10 max-w-lg md:mx-auto lg:mx-0"
               >
                 Diseño de stands, alquiler de carpas, mobiliario y producción de
                 eventos empresariales. Experiencias que inspiran desde 1990.
@@ -319,7 +319,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.45, duration: 0.6 }}
-                className="grid grid-cols-2 gap-3 sm:flex sm:flex-row sm:gap-4"
+                className="grid grid-cols-2 gap-3 md:flex md:flex-row md:justify-center lg:justify-start sm:gap-4"
               >
                 <a
                   href="https://wa.me/573125575477?text=Hola%20Multiespacios%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n"
@@ -341,12 +341,12 @@ export default function HomePage() {
             </div>
 
             {/* Right Column: Dynamic Carousel */}
-            <div className="lg:col-span-6 xl:col-span-7 relative h-[400px] sm:h-[450px] lg:h-[550px] w-full mt-4 lg:mt-0 flex items-center justify-center lg:justify-end perspective-1000">
+            <div className="lg:col-span-6 xl:col-span-7 relative h-[360px] sm:h-[450px] md:max-w-4xl md:mx-auto lg:max-w-none lg:h-[550px] w-full mt-4 lg:mt-0 flex items-center justify-center lg:justify-end perspective-1000">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="relative w-full max-w-[600px] h-full"
+                className="relative w-full max-w-[600px] h-full mx-auto"
               >
                 {/* Floating Glassmorphism Backing */}
                 <div className="absolute inset-0 bg-white/5 backdrop-blur-3xl rounded-3xl transform rotate-2 scale-95 border border-white/10 shadow-2xl" />
@@ -463,9 +463,9 @@ export default function HomePage() {
       </section>
 
       {/* Mobile Stats Section (Mobile Only) */}
-      <div className="block md:hidden bg-brand-blue border-b border-brand-light py-8 px-6">
-        <div className="grid grid-cols-2 gap-4">
-          <div className="flex items-center gap-3 bg-white/5 rounded-2xl p-4 border border-white/10">
+      <div className="block md:hidden bg-brand-blue border-b border-brand-light py-4 px-6">
+        <div className="grid grid-cols-2 gap-3">
+          <div className="flex items-center gap-3 bg-white/5 rounded-2xl p-3 border border-white/10">
             <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-brand-accent-light flex-shrink-0">
               <FiAward className="w-5 h-5" />
             </div>
@@ -476,7 +476,7 @@ export default function HomePage() {
               <div className="text-xs text-white/60 font-medium leading-tight">Años de experiencia</div>
             </div>
           </div>
-          <div className="flex items-center gap-3 bg-white/5 rounded-2xl p-4 border border-white/10">
+          <div className="flex items-center gap-3 bg-white/5 rounded-2xl p-3 border border-white/10">
             <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-brand-accent-light flex-shrink-0">
               <FiCheckCircle className="w-5 h-5" />
             </div>
@@ -491,7 +491,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 15 }}
             animate={showOtherStats ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="flex items-center gap-3 bg-white/5 rounded-2xl p-4 border border-white/10"
+            className="flex items-center gap-3 bg-white/5 rounded-2xl p-3 border border-white/10"
           >
             <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-brand-accent-light flex-shrink-0">
               <FiMapPin className="w-5 h-5" />
@@ -505,7 +505,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 15 }}
             animate={showOtherStats ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
-            className="flex items-center gap-3 bg-white/5 rounded-2xl p-4 border border-white/10"
+            className="flex items-center gap-3 bg-white/5 rounded-2xl p-3 border border-white/10"
           >
             <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-brand-accent-light flex-shrink-0">
               <FiShield className="w-5 h-5" />
