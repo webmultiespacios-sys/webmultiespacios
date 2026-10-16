@@ -406,7 +406,7 @@ export default function MobiliarioPage() {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/imagenes/3_Mobiliario/Salas Lounge/sofa-doble.webp"
+            src="/imagenes/3_Mobiliario/Salas Lounge/sala-lounge-1.webp"
             alt="Mobiliario Multiespacios"
             fill
             className="object-cover"
