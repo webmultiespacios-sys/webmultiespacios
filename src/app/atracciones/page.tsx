@@ -374,23 +374,17 @@ export default function AtraccionesPage() {
             <p className="text-white/70 mb-10 text-lg">
               Cotiza tus atracciones con nosotros y haz de tu evento una experiencia inolvidable para todos tus invitados.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <a
                 href={buildWhatsAppUrl(
                   "Hola Multiespacios, necesito atracciones para un evento"
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25"
+                className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-base font-semibold transition-all hover:shadow-xl hover:shadow-brand-green/25 w-full sm:w-auto"
               >
                 <FaWhatsapp className="w-5 h-5" />
                 Cotizar ahora
-              </a>
-              <a
-                href={`tel:${CONTACT.primaryPhone}`}
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full text-base font-semibold border border-white/20 transition-all"
-              >
-                Hablar con un asesor
               </a>
             </div>
           </motion.div>

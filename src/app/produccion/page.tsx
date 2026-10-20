@@ -364,21 +364,15 @@ export default function ProduccionPage() {
               <p className="text-white/80 mb-10 text-lg leading-relaxed">
                 Te acompañamos desde la conceptualización hasta el desmontaje. Contamos con personal certificado, estructuras de alta calidad y la logística necesaria para garantizar el éxito de tu proyecto.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex justify-center lg:justify-start">
                 <a
                   href={buildWhatsAppUrl("Hola Multiespacios, necesito cotizar evento")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-lg font-bold transition-all hover:shadow-xl hover:shadow-brand-green/25 hover:-translate-y-1"
+                  className="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-green-dark text-white px-8 py-4 rounded-full text-lg font-bold transition-all hover:shadow-xl hover:shadow-brand-green/25 hover:-translate-y-1 w-full sm:w-auto"
                 >
                   <FaWhatsapp className="w-6 h-6" />
                   Cotizar evento
-                </a>
-                <a
-                  href={`tel:${CONTACT.primaryPhone}`}
-                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full text-lg font-semibold border border-white/20 transition-all hover:-translate-y-1"
-                >
-                  Hablar con un asesor
                 </a>
               </div>
             </motion.div>
