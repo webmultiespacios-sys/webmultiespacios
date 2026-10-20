@@ -385,7 +385,7 @@ export default function CarpasPage() {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/imagenes/1_carpas/campamento-1.webp"
+            src="/imagenes/1_carpas/Campamento/campamento-1.webp"
             alt="Carpas Multiespacios"
             fill
             className="object-cover"
