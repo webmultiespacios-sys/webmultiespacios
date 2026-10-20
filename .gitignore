@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local editor
+.vscode/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
@@ -47,8 +50,8 @@ Manual de marca Multiespacios.Ju/
 Manual de marca Multiespacios.Ju.zip
 Prototipo página web.pdf
 Docs/
-/backups
-/scripts/convert-images.js
+/backups/
+/scripts/
 
 # Documentos locales / Skills de IA (no subir a git)
 SKILL_*.md
