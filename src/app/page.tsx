@@ -53,7 +53,7 @@ const services = [
     title: "Carpas",
     description:
       "Carpas tipo pagoda, a dos aguas, hangares y domos especiales para garantizar la cobertura de tu evento al aire libre.",
-    image: "/imagenes/1_carpas/Carpa polo/carpa-polo.webp",
+    image: "/imagenes/1_carpas/Carpa polo/carpas-certificadas.webp",
     href: "/carpas",
     color: "from-emerald-600 to-emerald-800",
   },

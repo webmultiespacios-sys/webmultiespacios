@@ -42,8 +42,9 @@ export const stands: Stand[] = [
     category: "Polos",
     dimensions: "",
     image: [
-      "/imagenes/1_carpas/Carpa polo/carpa-polo.webp",
+      "/imagenes/1_carpas/Carpa polo/carpa-polo-grande.webp",
       "/imagenes/1_carpas/Carpa polo/carpa-polo-2.webp",
+      "/imagenes/1_carpas/Carpa polo/carpa-polo.webp",
       "/imagenes/1_carpas/ficha-tecnica-carpas.webp",
       "/imagenes/1_carpas/Carpa polo/ficha-tecnica-2.webp",
       "/imagenes/1_carpas/Carpa polo/ficha-tecnica-3.webp"
